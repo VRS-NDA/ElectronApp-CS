@@ -23,7 +23,6 @@
     <type fullname="RoundReceiver" preserve="all" />
     <type fullname="ScoreObjectTypeLink" preserve="all" />
     <type fullname="ScoreReceiver" preserve="all" />
-    <type fullname="ScoreTracker" preserve="all" />
   </assembly>
   <assembly fullname="com.vftc.ui, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="ChangeScene" preserve="all" />
