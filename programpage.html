@@ -548,7 +548,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
+  localStorage.setItem('ProgramPage',true);
   gtag('config', 'G-Z2X3TS2906');
 </script>
 <body>
@@ -618,14 +618,14 @@
         <div style="width: 10px; display: inline-block;"></div>
         <button class="button1" onclick="stopProgram()">Stop Program</button>
         <div style="width: 10px; display: inline-block;"></div>
-        <button class="button1" onclick="resetField()">Reset Field</button>
+        <button id="reset2" class="button1" >Reset Field</button>
         <div style="width: 10px; display: inline-block;"></div>
 
       </div>
       <div id="programInit" style="display: inline-block;">
         <button id="initBttn" class="button1">Initialize Program</button>
         <div style="width: 10px; display: inline-block;"></div>
-        <button class="button1" onclick="resetField()">Reset Field</button>
+        <button id="reset1" class="button1" >Reset Field</button>
         <div style="width: 101.54px; display: inline-block;"></div>
       </div>
       <div style="width: 12.5px; display: inline-block;"></div>
@@ -638,6 +638,12 @@
 
 
   <script>
+    document.getElementById('reset1').addEventListener('click', () => {
+      resetField() 
+		})
+    document.getElementById('reset2').addEventListener('click', () => {
+      resetField() 
+		})
     document.getElementById('initBttn').addEventListener('click', () => {
       initProgram('')
 			window.dataLayer.push({ 'event': 'click', 'label': 'Initialize program' })

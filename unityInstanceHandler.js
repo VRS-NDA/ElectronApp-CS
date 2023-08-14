@@ -3,6 +3,7 @@ var alreadySetPlayMode = false;
 function check() {
     if (UnityInstance != null) {
         var playMode = localStorage.getItem('playMode');
+        var isProgramPage = localStorage.getItem('ProgramPage');
         if (playMode == "Autonomous" && !alreadySetPlayMode) {
             UnityInstance.SendMessage("VRS Singleton", "SetPlaymode", 1);
             UnityInstance.SendMessage("Main Menu", "changeSinglePlayer");
@@ -12,7 +13,7 @@ function check() {
             // alert("VRS Multiplayer is optimized with fullscreen mode. Please click on the blue button below the game window.");
             alreadySetPlayMode = true;
         }
-        if (playMode == "Autonomous") {
+        if (playMode == "Autonomous" && isProgramPage) {
             UnityInstance.SendMessage("VRS Singleton", "SetPlaymode", 1);
             setTimeout(writeMotorPowers, 1);
         }
@@ -30,8 +31,8 @@ function writeMotorPowers() {
     } else if (localStorage.getItem('stopMatch') == 'true') {
         UnityInstance.SendMessage("FieldManager", "buttonStopGame");
         localStorage.setItem('stopMatch', false);
-    } else if (localStorage.getItem('resetField') == 'true') {
-        UnityInstance.SendMessage("FieldManager", "resetField");
+    } if (localStorage.getItem('resetField') == 'true' && localStorage.getItem('ProgramPage') == 'true') {
+        UnityInstance.SendMessage("FieldManager", "autoResetFieldToo");
         localStorage.setItem('resetField', false);
     }
 
