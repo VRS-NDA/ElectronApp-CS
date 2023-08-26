@@ -32,7 +32,7 @@ function writeMotorPowers() {
         UnityInstance.SendMessage("FieldManager", "buttonStopGame");
         localStorage.setItem('stopMatch', false);
     } if (localStorage.getItem('resetField') == 'true' && localStorage.getItem('ProgramPage') == 'true') {
-        UnityInstance.SendMessage("FieldManager", "autoResetFieldToo");
+        UnityInstance.SendMessage("FieldManager", "resetField");
         localStorage.setItem('resetField', false);
     }
 
@@ -89,28 +89,11 @@ function writeMotorPowers() {
     if ( encoderResets[6]) {
         UnityInstance.SendMessage("JSAppIntegration","ResetMotor3Encoder");
     }
-/*
+
     UnityInstance.SendMessage("JSAppIntegration","SetMotor4",motors[7]);
     if ( encoderResets[7]) {
         UnityInstance.SendMessage("JSAppIntegration","ResetMotor4Encoder");
-    }*/
-    //enabling this makes motor 3 not work. unsure of why.
-
-    // UnityInstance.SendMessage("PhotonNetworkPlayer(Clone)", "setFrontLeftVel", motors[0]);
-    // UnityInstance.SendMessage("PhotonNetworkPlayer(Clone)", "setFrontRightVel", motors[1]);
-    // UnityInstance.SendMessage("PhotonNetworkPlayer(Clone)", "setBackLeftVel", motors[2]);
-    // UnityInstance.SendMessage("PhotonNetworkPlayer(Clone)", "setBackRightVel", motors[3]);
-    // UnityInstance.SendMessage("PhotonNetworkPlayer(Clone)", "setMotor5", motors[4]);
-    // UnityInstance.SendMessage("PhotonNetworkPlayer(Clone)", "setMotor6", motors[5]);
-    // UnityInstance.SendMessage("PhotonNetworkPlayer(Clone)", "setMotor7", motors[6]);
-    // UnityInstance.SendMessage("PhotonNetworkPlayer(Clone)", "setMotor8", motors[7]);
-
-    // UnityInstance.SendMessage("EncoderActionManager","SetFrontLeft",motors[0]);
-    // UnityInstance.SendMessage("EncoderActionManager","SetFrontRight",motors[1]);
-    // UnityInstance.SendMessage("EncoderActionManager","SetBackLeft",motors[2]);
-    // UnityInstance.SendMessage("EncoderActionManager","SetBackRight",motors[3]);
-    //Old Code (Lean off of using this)
-
+    }
 
     var command = new Object();
     command.motors = motors;
