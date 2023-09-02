@@ -35,7 +35,7 @@
 
 		@font-face {
 			font-family: 'Jura';
-			src: url('./blocks/fonts/Jura-Light.ttf');
+			src: url('./assets/fonts/Jura-Light.ttf');
 		}
 
 		input:focus,
@@ -519,14 +519,14 @@
 		}
 
 		#localButton {
-			background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/local.png") no-repeat center;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/images/local.png") no-repeat center;
 			background-size: 66vh;
 
 			animation: Intro_Selections 2s ease forwards;
 		}
 
 		#multiplayerButton {
-			background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/multiplayer.png") no-repeat center;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/images/multiplayer.png") no-repeat center;
 			background-size: 66vh;
 
 			animation: Intro_Selections 2s ease .25s forwards;
@@ -640,20 +640,20 @@
 	<link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
 	<div id="BKGD">
 		<div id="LoadingScreen"></div>
-		<img id="OrangeBKGD" src="./assets/OrangeBKGD.png">
+		<img id="OrangeBKGD" src="./assets/images/OrangeBKGD.png">
 		<div id="Circle1">
 			<div id="InnerCircle1"></div>
 		</div>
 		<div id="Circle2">
 			<div id="InnerCircle2"></div>
 		</div>
-		<img id="FieldLogo" src="./assets/centerstage-trans.png">
+		<img id="FieldLogo" src="./assets/images/centerstage-trans.png">
 	</div>
 	<div id="Icons">
 		<a id="FIRSTIllinois" href="https://www.firstillinoisrobotics.org/ftc/" target="_blank"><img
-				src="./assets/firstIllinoisLogo.png" style="height: 100%;"></a>
+				src="./assets/images/firstIllinoisLogo.png" style="height: 100%;"></a>
 		<a id="FTCLogo" href="https://www.firstinspires.org/robotics/ftc" target="_blank"><img
-				src="./assets/FTCLogo.png" style="height: 100%;"></a>
+				src="./assets/images/FTCLogo.png" style="height: 100%;"></a>
 	</div>
 	<div id="MainText">
 		<div id="TitleText">Welcome to the VIRTUAL ROBOT SIMULATOR PLATFORM</div>
@@ -674,13 +674,13 @@
 		<button class="NavButtons" id="feedback-button">Feedback</button>
 		<div style="width: 1vw;"></div>
 	</div>
-	<a id="VRSLogo" href="http://vrobotsim.com/" target="_blank"><img src="./assets/vrsLogo.png"
+	<a id="VRSLogo" href="http://vrobotsim.com/" target="_blank"><img src="./assets/images/vrsLogo.png"
 			style="width: 100%;"></a>
 	<div id="Selections">
 		<button id="localButton" class="SelectionPanel" onmouseover="buttonHover(this, true)"
 			onmouseout="buttonHover(this, false)">
 			<div class="SelectionTitle">Programming</div>
-			<img class="SelectionIcon" src="./assets/laptop.png">
+			<img class="SelectionIcon" src="./assets/images/laptop.png">
 			<div class="SelectionHint">Learn More</div>
 			<div class="SelectionDesc">Program your very own FTC robot using the easy to use "Blockly"
 				programming language or Java</div>
@@ -688,7 +688,7 @@
 		<button id="multiplayerButton" class="SelectionPanel" onmouseover="buttonHover(this, true)"
 			onmouseout="buttonHover(this, false)">
 			<div class="SelectionTitle">Robot Arena</div>
-			<img class="SelectionIcon" src="./assets/gamepad.png">
+			<img class="SelectionIcon" src="./assets/images/gamepad.png">
 			<div class="SelectionHint">Learn More</div>
 			<div class="SelectionDesc">Test your driving skills solo or with friends using the 2022-23 FTC POWERPLAY Field</div>
 			<!--<div class="SelectionDesc">Test your driving skills solo or with friends using popular FTC

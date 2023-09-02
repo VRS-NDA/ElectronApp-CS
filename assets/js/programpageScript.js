@@ -3,7 +3,7 @@ settingUp = 4;
 
 //Loads Toolbox XML
 var clientToolbox = new XMLHttpRequest();
-clientToolbox.open('GET', './blocks/toolbox.xml');
+clientToolbox.open('GET', './modules/RSM-CodeExecutionModule/blocks/toolbox.xml');
 clientToolbox.onload = function () {
     var toolboxTxt = clientToolbox.responseText;
     if (toolboxTxt !== '' && !document.getElementById('toolbox')) {
@@ -541,7 +541,7 @@ function runHowTo() {
 		if (currStep == 9 || currStep == 11) {
 			document.getElementById('howToOverlay').style.clipPath = document.getElementById('howToScreen').style.clipPath;
 			var client = new XMLHttpRequest();
-			client.open('GET', './blocks/samples/Tutorial' + (currStep == 9 ? 4 : 5) + '.blk');
+			client.open('GET', './modules/RSM-CodeExecutionModule/blocks/samples/Tutorial' + (currStep == 9 ? 4 : 5) + '.blk');
 			client.onload = function () {
 				var content = client.responseText;
 				if (content !== '')
@@ -878,7 +878,7 @@ function runNoviceLessonCode() {
     resetField();
     //Load Lesson Code to Run
     var client = new XMLHttpRequest();
-    client.open('GET', './blocks/lessons/' + lessonName + '.ftccode');
+    client.open('GET', './assets/lessons/' + lessonName + '.ftccode');
     client.onload = function () {
         var lessonCode = client.responseText;
         if (lessonCode !== '')
@@ -917,7 +917,7 @@ function runAdvancedLessonCode() {
     resetField();
     //Load Lesson Code to Run
     var client = new XMLHttpRequest();
-    client.open('GET', './blocks/lessons/' + lessonName + '.ftccode');
+    client.open('GET', './assets/lessons/' + lessonName + '.ftccode');
     client.onload = function () {
         var lessonCode = client.responseText;
         if (lessonCode !== '')
