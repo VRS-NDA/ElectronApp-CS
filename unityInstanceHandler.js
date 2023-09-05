@@ -32,7 +32,7 @@ function writeMotorPowers() {
         UnityInstance.SendMessage("FieldManager", "buttonStopGame");
         localStorage.setItem('stopMatch', false);
     } if (localStorage.getItem('resetField') == 'true' && localStorage.getItem('ProgramPage') == 'true') {
-        UnityInstance.SendMessage("FieldManager", "resetField");
+        UnityInstance.SendMessage("FieldManager", "autoResetFieldToo");
         localStorage.setItem('resetField', false);
     }
 

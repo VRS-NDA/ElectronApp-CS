@@ -111,13 +111,13 @@
       <!-- checkModified function is in programPageScript.js -->
       <select id="languageSelect" class="dropdown-select" onchange="checkModified(5)" style="width: 100px;">
         <option value="EN">English</option>
-        <option value="ES">Español</option>
+        <option value="ES">Espaï¿½ol</option>
         <option value="ZH">???</option>
         <option value="AR">????</option>
-        <option value="RO">Româna</option>
-        <option value="FR">Français</option>
+        <option value="RO">Romï¿½na</option>
+        <option value="FR">Franï¿½ais</option>
         <option value="UR">????</option>
-        <option value="TK">Türkçe</option>
+        <option value="TK">Tï¿½rkï¿½e</option>
         <option value="HN">??????</option>
       </select>
     </div>
@@ -131,6 +131,7 @@
   </div>
 
   <script>
+    localStorage.setItem('ProgramPage',true);
     document.getElementById('initBttn').addEventListener('click', async () => {
       await initProgram('')
       window.dataLayer.push({ 'event': 'click', 'label': 'Initialize program' })
