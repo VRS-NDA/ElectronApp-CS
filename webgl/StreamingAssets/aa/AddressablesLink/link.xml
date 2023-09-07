@@ -18,6 +18,7 @@
     <type fullname="RebindSaveLoad" preserve="all" />
     <type fullname="RobotNetControl" preserve="all" />
     <type fullname="SceneCombiner" preserve="all" />
+    <type fullname="SetMaterialOnChildren" preserve="all" />
     <type fullname="SetPixelColor" preserve="all" />
     <type fullname="TeamInventory" preserve="all" />
     <type fullname="UnityEngine.InputSystem.Samples.RebindUI.RebindActionUI" preserve="all" />
