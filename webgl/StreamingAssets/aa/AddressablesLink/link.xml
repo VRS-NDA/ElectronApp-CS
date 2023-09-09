@@ -21,6 +21,7 @@
     <type fullname="SetMaterialOnChildren" preserve="all" />
     <type fullname="SetPixelColor" preserve="all" />
     <type fullname="TeamInventory" preserve="all" />
+    <type fullname="ToggleWindow" preserve="all" />
     <type fullname="UnityEngine.InputSystem.Samples.RebindUI.RebindActionUI" preserve="all" />
     <type fullname="UnityEngine.InputSystem.Samples.RebindUI.RebindActionUI/InteractiveRebindEvent" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.InputSystem.Samples.RebindUI.RebindActionUI/UpdateBindingUIEvent" preserve="nothing" serialized="true" />
