@@ -135,6 +135,11 @@
       localStorage.setItem('colorSensorReadings', "[[" + R + "," + G + "," + B + "," + Distance + "," + Direction + "]]");
     }
 
+    function setColorSensorReadings(data) {
+      // console.log("SETTING COLOR SENSOR READINGSS: " + R + "," + G + "," + B + "," + Distance + "," + Direction);
+      localStorage.setItem('colorSensorReadings', JSON.stringify(data));
+    }
+
 
     function setTouchSensorData(state) {
       // console.log("SETTING COLOR SENSOR READINGSS: " + R + "," + G + "," + B + "," + Distance);
