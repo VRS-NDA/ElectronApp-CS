@@ -477,3 +477,79 @@ input[type=text] {
     visibility: hidden;
   }
 }
+#fieldView {
+	top: 40px;
+	right: 0px;
+	width: 49.5%;
+	height: calc(100vh - 49px) !important;
+	z-index: 100;
+	position: absolute;
+	background: #231f20;
+	border: 3.5px solid #ff9800;
+	transition: 0.5s ease-in-out;
+	webkit-backface-visibility: hidden;
+}
+.openFullScreen {
+	width: 100% !important;
+	transition: 0.5s ease-in-out;
+	height: 100vh;
+	webkit-backface-visibility: hidden;
+}
+iframe {
+	will-change: transform;
+}
+#fullScreenIcon {
+	position: absolute;
+	z-index: 1000;
+	width: 30px;
+	right: 10px;
+	top: 40px;
+	cursor: pointer;
+}
+#textSelection > div {
+	font-size: 25px !important;
+}
+#rightScreen {
+	min-width: 50%;
+	max-width: 50%;
+	background-color: #242424;
+	left: auto !important;
+	right: auto !important;
+}
+
+.modal {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 101;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-content {
+	min-width: 10px;
+	width: 80%;
+	position: relative;
+	min-height: 90%;
+	border-radius: 20px;
+}
+
+.close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 20px;
+	color: white;
+	cursor: pointer;
+	z-index: 101;
+}
+#rightScreen {
+	position: absolute;
+	min-width: 100%;
+	z-index: 103;
+	top: 0%;
+}
