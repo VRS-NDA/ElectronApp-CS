@@ -1,11 +1,11 @@
-
+const jwt = require('jsonwebtoken');
 const jwtDecode = require('jwt-decode');
 const axios = require('axios');
 const url = require('url');
 const envVariables = require('../env-variables');
 const keytar = require('keytar');
 const os = require('os');
-
+const {decode} = jwt;
 const {apiIdentifier, auth0Domain, clientId} = envVariables;
 
 const redirectUri = 'http://localhost/callback';
@@ -59,7 +59,7 @@ async function refreshTokens() {
       const response = await axios(refreshOptions);
 
       accessToken = response.data.access_token;
-      profile = jwtDecode(response.data.id_token);
+      profile = decode(response.data.id_token);
     } catch (error) {
       await logout();
 
@@ -91,12 +91,12 @@ async function loadTokens(callbackURL) {
   };
 
   try {
+    
     const response = await axios(options);
 
     accessToken = response.data.access_token;
-    profile = jwtDecode(response.data.id_token);
+    profile = decode(response.data.id_token);
     refreshToken = response.data.refresh_token;
-
     if (refreshToken) {
       await keytar.setPassword(keytarService, keytarAccount, refreshToken);
     }

@@ -17,6 +17,7 @@ async function createWindow() {
 
     try {
       await authService.refreshTokens();
+
       const mainWindow = new BrowserWindow({
         webPreferences: {
           preload: path.join(app.getAppPath(), 'preload.js'),
@@ -30,7 +31,7 @@ async function createWindow() {
   
       mainWindow.maximize();
       mainWindow.setMenuBarVisibility(false);
-  
+      
       mainWindow.loadFile('homepage.html')
     } catch (err) {
       createAuthWindow();
