@@ -40,6 +40,7 @@ async function createWindow() {
     //Set up main window
     
   } else {
+    console.log("closing");
     //Close the app if it is already running
     app.quit();
   }
@@ -59,6 +60,7 @@ app.on('ready', () => {
   ipcMain.handle('auth:get-profile', authService.getProfile);
   ipcMain.handle('api:get-private-data', apiService.getPrivateData);
   ipcMain.on('auth:log-out', () => {
+    console.log("logout");
     BrowserWindow.getAllWindows().forEach(window => window.close());
     createLogoutWindow();
   });

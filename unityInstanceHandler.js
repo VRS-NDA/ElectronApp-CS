@@ -17,6 +17,13 @@ function check() {
             UnityInstance.SendMessage("VRS Singleton", "SetPlaymode", 1);
             setTimeout(writeMotorPowers, 1);
         }
+
+        /*if(window.accessToken)
+        {
+            console.log("setting access token");
+            UnityInstance.SendMessage("VRS Singleton", "SetAccessToken", window.accessToken);
+        }*/
+
     } else {
         setTimeout(check, 500);
     }

@@ -59,6 +59,7 @@ async function refreshTokens() {
       const response = await axios(refreshOptions);
 
       accessToken = response.data.access_token;
+      //window.accessToken = accessToken;
       profile = decode(response.data.id_token);
     } catch (error) {
       await logout();

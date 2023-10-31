@@ -21,7 +21,7 @@ function createAuthWindow() {
     frame: true,
     icon: 'logo.png'
   });
-
+  win.setMenuBarVisibility(false);
   win.loadURL(authService.getAuthenticationURL());
 
   const {session: {webRequest}} = win.webContents;
@@ -55,14 +55,14 @@ function destroyAuthWin() {
 
 function createLogoutWindow() {
   const logoutWindow = new BrowserWindow({
-    show: false,
+    show: true,
   });
 
   logoutWindow.loadURL(authService.getLogOutUrl());
 
   logoutWindow.on('ready-to-show', async () => {
     await authService.logout();
-    logoutWindow.close();
+    //logoutWindow.close();
   });
 }
 
