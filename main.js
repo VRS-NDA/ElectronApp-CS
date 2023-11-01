@@ -4,6 +4,7 @@ const path = require('path')
 const { createAuthWindow, createLogoutWindow } = require('./main/auth-process');
 const authService = require('./services/auth-service');
 const apiService = require('./services/api-service');
+const createAppWindow = require('./main/app-process');
 
 if (handleSquirrelEvent(app)) {
   // squirrel event handled and app will exit in 1000ms, so don't do anything else
@@ -17,22 +18,7 @@ async function createWindow() {
 
     try {
       await authService.refreshTokens();
-
-      const mainWindow = new BrowserWindow({
-        webPreferences: {
-          preload: path.join(app.getAppPath(), 'preload.js'),
-          // devTools: false,
-          contextIsolation: false,
-        },
-        fullscreen: false,
-        frame: true,
-        icon: 'logo.png'
-      })
-  
-      mainWindow.maximize();
-      mainWindow.setMenuBarVisibility(false);
-      
-      mainWindow.loadFile('homepage.html')
+      createAppWindow();
     } catch (err) {
       createAuthWindow();
     }
@@ -40,7 +26,6 @@ async function createWindow() {
     //Set up main window
     
   } else {
-    console.log("closing");
     //Close the app if it is already running
     app.quit();
   }

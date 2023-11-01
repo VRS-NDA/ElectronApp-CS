@@ -2,7 +2,7 @@
 
 const { BrowserWindow } = require('electron');
 const authService = require('../services/auth-service');
-//const createAppWindow = require('../main/app-process');
+const createAppWindow = require('../main/app-process');
 
 let win = null;
 
@@ -34,7 +34,7 @@ function createAuthWindow() {
 
   webRequest.onBeforeRequest(filter, async ({url}) => {
     await authService.loadTokens(url);
-    //createAppWindow();
+    createAppWindow();
     return destroyAuthWin();
   });
 
@@ -55,14 +55,15 @@ function destroyAuthWin() {
 
 function createLogoutWindow() {
   const logoutWindow = new BrowserWindow({
-    show: true,
+    show: false,
   });
 
   logoutWindow.loadURL(authService.getLogOutUrl());
 
   logoutWindow.on('ready-to-show', async () => {
     await authService.logout();
-    //logoutWindow.close();
+    logoutWindow.close();
+    createAuthWindow();
   });
 }
 
