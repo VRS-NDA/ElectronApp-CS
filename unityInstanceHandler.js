@@ -1,10 +1,20 @@
 UnityInstance = null;
+
+window.onmessage = function(e) {
+    if (e.data) {
+        Leaderboard = e.data;
+    }
+};
+
+
+Leaderboard = null
 var alreadySetPlayMode = false;
 function check() {
     if (UnityInstance != null) {
 
-        window.electronAPI.setUnityInstance(UnityInstance);
-
+        //window.electronAPI.setUnityInstance(UnityInstance);
+        //console.log("TOP");
+        //console.log(window.top[1].electronAPI);
         var playMode = localStorage.getItem('playMode');
         var isProgramPage = localStorage.getItem('ProgramPage');
         if (playMode == "Autonomous" && !alreadySetPlayMode) {
@@ -19,6 +29,11 @@ function check() {
         if (playMode == "Autonomous" && isProgramPage) {
             UnityInstance.SendMessage("VRS Singleton", "SetPlaymode", 1);
             setTimeout(writeMotorPowers, 1);
+        }
+        if(Leaderboard)
+        {
+            console.log(Leaderboard);
+            UnityInstance.SendMessage("VRS Singleton", "GetLeaderboard", Leaderboard);
         }
 
         /*if(window.accessToken)

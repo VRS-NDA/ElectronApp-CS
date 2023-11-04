@@ -1,7 +1,7 @@
 // renderers/home.js
 
 addEventListener('load',async  () =>{
-    const profile = await window.electronAPI.getProfile();
+    //const profile = await window.electronAPI.getProfile();
     //document.getElementById('picture').src = profile.picture;
     //document.getElementById('name').innerText = profile.name;
     //document.getElementById('success').innerText = 'You successfully used OpenID Connect and OAuth 2.0 to authenticate.';
@@ -11,12 +11,10 @@ addEventListener('load',async  () =>{
     var output = await window.electronAPI.getLeaderboard();
     console.log(output);
     console.log(output[0]);
-    //var unity = window.electronAPI.getUnityInstance();
-    var frame = document.getElementById('fieldViewiframe');
-    console.log(frame);
-    frame.contentWindow.postMessage(output,'*');
+    var unity = window.electronAPI.getUnityInstance();
+    console.log(unity);
 
-    //unity.SendMessage("VRS Singleton", "GetLeaderboard", output);
+    unity.SendMessage("VRS Singleton", "GetLeaderboard", output);
   };
   document.getElementById('setscore').onclick = async () => {
     var profile = await window.electronAPI.getProfile();
@@ -25,11 +23,4 @@ addEventListener('load',async  () =>{
     var output = await window.electronAPI.setLeaderboard(inputData);
     console.log(output);
   };
-
-  //for communicating with unity IFRAME
-    window.onmessage = function(e) {
-        if (e.data == 'unity') {
-            alert('It works!');
-        }
-    };
-    
+  
