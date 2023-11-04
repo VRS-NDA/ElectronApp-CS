@@ -4,7 +4,10 @@ const path = require('path')
 const { createAuthWindow, createLogoutWindow } = require('./main/auth-process');
 const authService = require('./services/auth-service');
 const apiService = require('./services/api-service');
+const leaderboardservice = require('./services/leaderboard-service');
 const createAppWindow = require('./main/app-process');
+
+//console.log(leaderboardservice);
 
 if (handleSquirrelEvent(app)) {
   // squirrel event handled and app will exit in 1000ms, so don't do anything else
@@ -44,6 +47,16 @@ app.on('ready', () => {
   // Handle IPC messages from the renderer process.
   ipcMain.handle('auth:get-profile', authService.getProfile);
   ipcMain.handle('api:get-private-data', apiService.getPrivateData);
+  ipcMain.handle('api:get-leaderboard', leaderboardservice.getLeaderboard);
+  ipcMain.handle('api:get-unity', apiService.getUnity);
+  ipcMain.handle('api:set-leaderboard', async (event, someArgument) => {
+    const result = await leaderboardservice.sendToLeaderboard(someArgument);
+    return result;
+  });
+  ipcMain.handle('api:set-unity', (event, ins) => {
+    apiService.setUnity(ins);
+  });
+  
   ipcMain.on('auth:log-out', () => {
     console.log("logout");
     BrowserWindow.getAllWindows().forEach(window => window.close());

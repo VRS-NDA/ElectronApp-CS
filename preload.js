@@ -34,6 +34,10 @@ const electronAPI = {
   getProfile: () => ipcRenderer.invoke('auth:get-profile'),
   logOut: () => ipcRenderer.send('auth:log-out'),
   getPrivateData: () => ipcRenderer.invoke('api:get-private-data'),
+  getLeaderboard: () => ipcRenderer.invoke('api:get-leaderboard'),
+  setLeaderboard: (inp) => ipcRenderer.invoke('api:set-leaderboard',inp),
+  setUnityInstance: (ins) => ipcRenderer.invoke('api:set-unity',ins),
+  getUnityInstance: () => ipcRenderer.invoke('api:get-unity')
 };
 window.electronAPI = electronAPI;
 /*

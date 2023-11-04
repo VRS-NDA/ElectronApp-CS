@@ -2,6 +2,9 @@ UnityInstance = null;
 var alreadySetPlayMode = false;
 function check() {
     if (UnityInstance != null) {
+
+        window.electronAPI.setUnityInstance(UnityInstance);
+
         var playMode = localStorage.getItem('playMode');
         var isProgramPage = localStorage.getItem('ProgramPage');
         if (playMode == "Autonomous" && !alreadySetPlayMode) {
@@ -115,4 +118,14 @@ function writeMotorPowers() {
     //Implement Servos once Unity is ready
 
     check();
+}
+
+function getLeaderboard()
+{
+    return leaderboardservice.getLeaderboard();
+}
+
+function sendToLeaderboard(input)
+{
+    leaderboardservice.sendToLeaderboard(input);
 }

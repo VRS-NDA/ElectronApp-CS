@@ -90,7 +90,7 @@
       }).then((unityInstance) => {
         console.log("WROTE: " + unityInstance);
         UnityInstance = unityInstance;
-
+        window.unity = unityInstance;
         loadingBar.style.display = "none";
         fullscreenButton.onclick = () => {
           unityInstance.SetFullscreen(1);
