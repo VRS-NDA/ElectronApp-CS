@@ -32,8 +32,8 @@ function check() {
         }
         if(Leaderboard)
         {
-            console.log(Leaderboard);
-            UnityInstance.SendMessage("VRS Singleton", "GetLeaderboard", Leaderboard);
+            UnityInstance.SendMessage("VRS Singleton", "GetLeaderboard", JSON.stringify(Leaderboard));
+            Leaderboard = null;
         }
 
         /*if(window.accessToken)
@@ -135,12 +135,8 @@ function writeMotorPowers() {
     check();
 }
 
-function getLeaderboard()
+function sendToLeaderboard(points,game)
 {
-    return leaderboardservice.getLeaderboard();
-}
-
-function sendToLeaderboard(input)
-{
-    leaderboardservice.sendToLeaderboard(input);
+    window.top.postMessage({points:points,game:game},'*');
+    console.log(points);
 }

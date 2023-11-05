@@ -2,6 +2,7 @@
   <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="BackdropScorer" preserve="all" />
     <type fullname="DebugDriverAmounts" preserve="all" />
+    <type fullname="DisplayLeaderboard" preserve="all" />
     <type fullname="DisplayScoring" preserve="all" />
     <type fullname="DistanceToFloor" preserve="all" />
     <type fullname="DriveReceiverMoveRelative" preserve="all" />
@@ -18,6 +19,7 @@
     <type fullname="RebindSaveLoad" preserve="all" />
     <type fullname="RobotNetControl" preserve="all" />
     <type fullname="SceneCombiner" preserve="all" />
+    <type fullname="ScoreOutput" preserve="all" />
     <type fullname="SetMaterialOnChildren" preserve="all" />
     <type fullname="SetPixelColor" preserve="all" />
     <type fullname="TeamInventory" preserve="all" />

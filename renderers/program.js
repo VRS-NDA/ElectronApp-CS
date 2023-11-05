@@ -14,22 +14,36 @@ addEventListener('load',async  () =>{
     //var unity = window.electronAPI.getUnityInstance();
     var frame = document.getElementById('fieldViewiframe');
     console.log(frame);
-    frame.contentWindow.postMessage(output,'*');
+    frame.contentWindow.postMessage(JSON.stringify(output),'*');
 
     //unity.SendMessage("VRS Singleton", "GetLeaderboard", output);
   };
-  document.getElementById('setscore').onclick = async () => {
+
+  //for communicating with unity IFRAME
+  window.onmessage = function(e) {
+    console.log("messagesent");
+    if (e.data == 'unity') {
+        alert('It works!');
+    }
+};
+
+window.top.onmessage = function(e) {
+    console.log("messageseddnt");
+    if (e.data) {
+        sendLeaderData(e.data);
+        alert('It works!');
+    }
+};
+
+async function sendLeaderData(data)
+{
     var profile = await window.electronAPI.getProfile();
-    var inputData = {points: 1000, game:"CS", uid:profile.sub};
+    var inputData = {points: data.points, game:data.game, uid:profile.sub};
     console.log(inputData);
     var output = await window.electronAPI.setLeaderboard(inputData);
     console.log(output);
-  };
-
-  //for communicating with unity IFRAME
-    window.onmessage = function(e) {
-        if (e.data == 'unity') {
-            alert('It works!');
-        }
-    };
+}
+  /*document.getElementById('setscore').onclick = async () => {
     
+  };*/
+
