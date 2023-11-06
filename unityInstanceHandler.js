@@ -137,6 +137,7 @@ function writeMotorPowers() {
 
 function sendToLeaderboard(points,game)
 {
+    console.log("Game"+game);
     window.top.postMessage({points:points,game:game},'*');
     console.log(points);
 }
