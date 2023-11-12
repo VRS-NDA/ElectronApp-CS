@@ -2,6 +2,8 @@ UnityInstance = null;
 
 window.onmessage = function(e) {
     if (e.data) {
+        console.log('unityins recvd');
+        console.log(e.data);
         Leaderboard = e.data;
     }
 };
@@ -32,9 +34,15 @@ function check() {
         }
         if(Leaderboard)
         {
+            console.log('sending to unity');
             UnityInstance.SendMessage("VRS Singleton", "GetLeaderboard", JSON.stringify(Leaderboard));
             Leaderboard = null;
         }
+        /*if(getLeaderFlag)
+        {
+            UnityInstance.SendMessage("VRS Singleton", "GetLeaderboard", JSON.stringify(Leaderboard));
+            getLeaderFlag = null;
+        }*/
 
         /*if(window.accessToken)
         {
@@ -141,3 +149,9 @@ function sendToLeaderboard(points,game)
     window.top.postMessage({points:points,game:game},'*');
     console.log(points);
 }
+
+function requestLeaderboard()
+{
+    window.top.postMessage({action:"getleader"},'*');
+}
+

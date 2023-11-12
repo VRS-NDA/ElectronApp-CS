@@ -11,19 +11,6 @@
     console.log("logout");
     window.electronAPI.logOut();
   };
-
-  document.getElementById('getscore').onclick = async () => {
-    var output = await window.electronAPI.getLeaderboard();
-    console.log(output);
-    console.log(output[0]);
-  };
-  document.getElementById('setscore').onclick = async () => {
-    var profile = await window.electronAPI.getProfile();
-    var inputData = {points: 1000, game:"CS", uid:profile.sub};
-    console.log(inputData);
-    var output = await window.electronAPI.setLeaderboard(inputData);
-    console.log(output);
-  };
   
   /*document.getElementById('secured-request').onclick = async () => {
     try {

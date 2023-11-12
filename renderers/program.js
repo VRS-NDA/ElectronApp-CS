@@ -6,18 +6,6 @@ addEventListener('load',async  () =>{
     //document.getElementById('name').innerText = profile.name;
     //document.getElementById('success').innerText = 'You successfully used OpenID Connect and OAuth 2.0 to authenticate.';
   });
-  
-  document.getElementById('getscore').onclick = async () => {
-    var output = await window.electronAPI.getLeaderboard();
-    console.log(output);
-    console.log(output[0]);
-    //var unity = window.electronAPI.getUnityInstance();
-    var frame = document.getElementById('fieldViewiframe');
-    console.log(frame);
-    frame.contentWindow.postMessage(JSON.stringify(output),'*');
-
-    //unity.SendMessage("VRS Singleton", "GetLeaderboard", output);
-  };
 
   //for communicating with unity IFRAME
   window.onmessage = function(e) {
@@ -27,10 +15,22 @@ addEventListener('load',async  () =>{
     }
 };
 
+async function getLeader()
+{
+    var output = await window.electronAPI.getLeaderboard();
+    var frame = document.getElementById('fieldViewiframe');
+    console.log(frame);
+    frame.contentWindow.postMessage(JSON.stringify(output),'*');
+}
+
 window.top.onmessage = function(e) {
     console.log("messageseddnt");
 
-    if (e.data) {
+    if (e.data.action && e.data.action == 'getleader')
+    {   
+        getLeader();
+    }
+    else if (e.data) {
         sendLeaderData(e.data);
     }
 };
