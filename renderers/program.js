@@ -29,9 +29,9 @@ addEventListener('load',async  () =>{
 
 window.top.onmessage = function(e) {
     console.log("messageseddnt");
+
     if (e.data) {
         sendLeaderData(e.data);
-        alert('It works!');
     }
 };
 
