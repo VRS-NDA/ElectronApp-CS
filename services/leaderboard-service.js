@@ -60,6 +60,7 @@ async function sendToLeaderboard(inputData) {
         formData.append("uid",inputData.uid);
         formData.append("points",inputData.points);
         formData.append("game",inputData.game);
+        formData.append("name",inputData.name);
 
         try {
             const response = await axios.post(backendurl,formData,{
