@@ -12,6 +12,7 @@
     <type fullname="GrabberMP" preserve="all" />
     <type fullname="HookScoring" preserve="all" />
     <type fullname="NetworkControls" preserve="all" />
+    <type fullname="OptionsPopulator" preserve="all" />
     <type fullname="PixelDropper" preserve="all" />
     <type fullname="PlaceRandomizationObject" preserve="all" />
     <type fullname="Plane" preserve="all" />
