@@ -25,9 +25,14 @@
     "electron-packager": "^17.1.2"
   },
   "dependencies": {
+    "axios": "^1.6.0",
     "blockly": "^10.2.2",
     "electron-squirrel-startup": "^1.0.0",
     "electron-winstaller": "^5.0.0",
+    "form-data": "^4.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
+    "keytar": "^7.9.0",
     "net": "^1.0.2"
   }
 }

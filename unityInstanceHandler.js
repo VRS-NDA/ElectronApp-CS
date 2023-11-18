@@ -1,7 +1,22 @@
 UnityInstance = null;
+
+window.onmessage = function(e) {
+    if (e.data) {
+        console.log('unityins recvd');
+        console.log(e.data);
+        Leaderboard = e.data;
+    }
+};
+
+
+Leaderboard = null
 var alreadySetPlayMode = false;
 function check() {
     if (UnityInstance != null) {
+
+        //window.electronAPI.setUnityInstance(UnityInstance);
+        //console.log("TOP");
+        //console.log(window.top[1].electronAPI);
         var playMode = localStorage.getItem('playMode');
         var isProgramPage = localStorage.getItem('ProgramPage');
         if (playMode == "Autonomous" && !alreadySetPlayMode) {
@@ -17,6 +32,24 @@ function check() {
             UnityInstance.SendMessage("VRS Singleton", "SetPlaymode", 1);
             setTimeout(writeMotorPowers, 1);
         }
+        if(Leaderboard)
+        {
+            console.log('sending to unity');
+            UnityInstance.SendMessage("VRS Singleton", "GetLeaderboard", JSON.stringify(Leaderboard));
+            Leaderboard = null;
+        }
+        /*if(getLeaderFlag)
+        {
+            UnityInstance.SendMessage("VRS Singleton", "GetLeaderboard", JSON.stringify(Leaderboard));
+            getLeaderFlag = null;
+        }*/
+
+        /*if(window.accessToken)
+        {
+            console.log("setting access token");
+            UnityInstance.SendMessage("VRS Singleton", "SetAccessToken", window.accessToken);
+        }*/
+
     } else {
         setTimeout(check, 500);
     }
@@ -109,3 +142,16 @@ function writeMotorPowers() {
 
     check();
 }
+
+function sendToLeaderboard(points,game)
+{
+    console.log("Game"+game);
+    window.top.postMessage({points:points,game:game},'*');
+    console.log(points);
+}
+
+function requestLeaderboard()
+{
+    window.top.postMessage({action:"getleader"},'*');
+}
+

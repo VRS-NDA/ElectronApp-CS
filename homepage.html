@@ -16,11 +16,11 @@
 	
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6J96F8QS9"></script>
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-G6J96F8QS9');
 </script>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MS5PQSVP"
@@ -464,6 +464,21 @@
 			flex: 0 0 auto;
 		}
 
+		.NavText {
+			text-align: center;
+			font-family: Jura;
+			text-decoration: none;
+			font-size: 1vw;
+			font-weight: 600;
+			margin: 2vh .25vw;
+			margin-bottom: 0px;
+			cursor: pointer;
+			padding: .66vh .75vw;
+			color: rgb(255, 255, 255);
+			background-color: transparent;
+			flex: 0 0 auto;
+		}
+
 		.NavButtons:hover {
 			transition-duration: 0.4s;
 			background-color: white;
@@ -679,6 +694,8 @@
 		
 	</div>
 	<div id="NavItems">
+		<div class="NavText" id="name"></div>
+		<button class="NavButtons" id="logout">Logout</button>
 		<button class="NavButtons" id="how-to-use-button">How
 			To Use</button>
 		<button class="NavButtons" id="more-how-to-button">Lessons
@@ -836,6 +853,7 @@
 		}
 
 	</script>
+	<script src="./renderers/home.js"></script>
 </body>
 
 </html>

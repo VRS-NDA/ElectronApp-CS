@@ -1,45 +1,82 @@
-const { app, BrowserWindow } = require('electron')
+const { app, ipcMain, BrowserWindow } = require('electron')
 const path = require('path')
+
+const { createAuthWindow, createLogoutWindow, createLoginWindow } = require('./main/auth-process');
+const authService = require('./services/auth-service');
+const apiService = require('./services/api-service');
+const leaderboardservice = require('./services/leaderboard-service');
+const createAppWindow = require('./main/app-process');
+
+//console.log(leaderboardservice);
+var appWindow = null;
 
 if (handleSquirrelEvent(app)) {
   // squirrel event handled and app will exit in 1000ms, so don't do anything else
   return;
 }
 
-function createWindow() {
+async function createWindow() {
   // Create the browser window.
   const gotTheLock = app.requestSingleInstanceLock();
   if (gotTheLock) { // Enters if no other instance of the app is running
+
+    try {
+      await authService.refreshTokens();
+      createAppWindow();
+    } catch (err) {
+      appWindow = createAppWindow();
+    }
+
     //Set up main window
-    const mainWindow = new BrowserWindow({
-      webPreferences: {
-        preload: path.join(app.getAppPath(), 'preload.js'),
-        // devTools: false,
-        contextIsolation: false,
-      },
-      fullscreen: false,
-      frame: true,
-      icon: 'logo.png'
-    })
-
-    mainWindow.maximize();
-    mainWindow.setMenuBarVisibility(false);
-
-    mainWindow.loadFile('homepage.html')
+    
   } else {
     //Close the app if it is already running
     app.quit();
   }
 }
 
-app.whenReady().then(() => {
+/*app.whenReady().then(() => {
   createWindow()
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
-})
+})*/
+
+app.on('ready', () => {
+  // Handle IPC messages from the renderer process.
+  ipcMain.handle('auth:get-profile', authService.getProfile);
+  ipcMain.handle('api:get-private-data', apiService.getPrivateData);
+  ipcMain.handle('api:get-leaderboard', leaderboardservice.getLeaderboard);
+  ipcMain.handle('api:get-unity', apiService.getUnity);
+  ipcMain.handle('api:set-leaderboard', async (event, someArgument) => {
+    const result = await leaderboardservice.sendToLeaderboard(someArgument);
+    return result;
+  });
+  ipcMain.handle('api:set-unity', (event, ins) => {
+    apiService.setUnity(ins);
+  });
+  
+  ipcMain.handle('api:reload-main', () => {
+    if(appWindow)
+    {
+        appWindow.webContents.reloadIgnoringCache();
+    }
+    
+  });
+  
+  ipcMain.on('auth:log-out', () => {
+    //BrowserWindow.getAllWindows().forEach(window => window.close());
+    createLogoutWindow();
+  });
+  ipcMain.on('auth:log-in', () => {
+    //BrowserWindow.getAllWindows().forEach(window => window.close());
+    createLoginWindow();
+  });
+  createWindow();
+  //showWindow();
+});
 
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
