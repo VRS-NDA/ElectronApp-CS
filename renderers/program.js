@@ -44,9 +44,7 @@ async function sendLeaderData(data)
         return null;
     }
     var inputData = {points: data.points, game:data.game, uid:profile.sub, name:profile.name};
-    console.log(inputData);
     var output = await window.electronAPI.setLeaderboard(inputData);
-    console.log(output);
 }
   /*document.getElementById('setscore').onclick = async () => {
     
