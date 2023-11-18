@@ -33,6 +33,7 @@ function createAppWindow() {
   mainWindow.setMenuBarVisibility(false);
   
   mainWindow.loadFile('homepage.html');
+  return mainWindow;
 }
 
 module.exports = createAppWindow;

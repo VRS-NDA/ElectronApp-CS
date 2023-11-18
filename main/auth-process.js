@@ -34,7 +34,7 @@ function createAuthWindow() {
 
   webRequest.onBeforeRequest(filter, async ({url}) => {
     await authService.loadTokens(url);
-    createAppWindow();
+    BrowserWindow.getAllWindows().forEach(window=> window.webContents.reloadIgnoringCache());
     return destroyAuthWin();
   });
 
@@ -63,6 +63,21 @@ function createLogoutWindow() {
   logoutWindow.on('ready-to-show', async () => {
     await authService.logout();
     logoutWindow.close();
+    BrowserWindow.getAllWindows().forEach(window=> window.webContents.reloadIgnoringCache());
+    //createAppWindow();
+  });
+}
+
+function createLoginWindow() {
+  const logoutWindow = new BrowserWindow({
+    show: false,
+  });
+
+  logoutWindow.loadURL(authService.getLogOutUrl());
+
+  logoutWindow.on('ready-to-show', async () => {
+    await authService.logout();
+    logoutWindow.close();
     createAuthWindow();
   });
 }
@@ -70,4 +85,5 @@ function createLogoutWindow() {
 module.exports = {
   createAuthWindow,
   createLogoutWindow,
+  createLoginWindow
 };

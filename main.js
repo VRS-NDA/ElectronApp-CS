@@ -1,13 +1,14 @@
 const { app, ipcMain, BrowserWindow } = require('electron')
 const path = require('path')
 
-const { createAuthWindow, createLogoutWindow } = require('./main/auth-process');
+const { createAuthWindow, createLogoutWindow, createLoginWindow } = require('./main/auth-process');
 const authService = require('./services/auth-service');
 const apiService = require('./services/api-service');
 const leaderboardservice = require('./services/leaderboard-service');
 const createAppWindow = require('./main/app-process');
 
 //console.log(leaderboardservice);
+var appWindow = null;
 
 if (handleSquirrelEvent(app)) {
   // squirrel event handled and app will exit in 1000ms, so don't do anything else
@@ -23,7 +24,7 @@ async function createWindow() {
       await authService.refreshTokens();
       createAppWindow();
     } catch (err) {
-      createAuthWindow();
+      appWindow = createAppWindow();
     }
 
     //Set up main window
@@ -57,10 +58,21 @@ app.on('ready', () => {
     apiService.setUnity(ins);
   });
   
+  ipcMain.handle('api:reload-main', () => {
+    if(appWindow)
+    {
+        appWindow.webContents.reloadIgnoringCache();
+    }
+    
+  });
+  
   ipcMain.on('auth:log-out', () => {
-    console.log("logout");
-    BrowserWindow.getAllWindows().forEach(window => window.close());
+    //BrowserWindow.getAllWindows().forEach(window => window.close());
     createLogoutWindow();
+  });
+  ipcMain.on('auth:log-in', () => {
+    //BrowserWindow.getAllWindows().forEach(window => window.close());
+    createLoginWindow();
   });
   createWindow();
   //showWindow();

@@ -3,14 +3,28 @@
     addEventListener('load',async  () =>{
     const profile = await window.electronAPI.getProfile();
     //document.getElementById('picture').src = profile.picture;
-    document.getElementById('name').innerText = profile.name;
+    if(profile)
+    {
+        document.getElementById('name').innerText = profile.name;
+        document.getElementById('logout').onclick = () => {
+          window.electronAPI.logOut();
+        };
+    }
+    else
+    {
+      document.getElementById('name').innerText = "Log in to post your high score";
+      document.getElementById('logout').innerText = "Log In";
+      document.getElementById('logout').onclick = () => {
+        window.electronAPI.logIn();
+      };
+    }
+
+    
+    
     //document.getElementById('success').innerText = 'You successfully used OpenID Connect and OAuth 2.0 to authenticate.';
   });
   
-  document.getElementById('logout').onclick = () => {
-    console.log("logout");
-    window.electronAPI.logOut();
-  };
+
   
   /*document.getElementById('secured-request').onclick = async () => {
     try {

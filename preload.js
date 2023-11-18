@@ -33,11 +33,13 @@ const { /*contextBridge,*/ipcRenderer } = require("electron");
 const electronAPI = {
   getProfile: () => ipcRenderer.invoke('auth:get-profile'),
   logOut: () => ipcRenderer.send('auth:log-out'),
+  logIn: () => ipcRenderer.send('auth:log-in'),
   getPrivateData: () => ipcRenderer.invoke('api:get-private-data'),
   getLeaderboard: () => ipcRenderer.invoke('api:get-leaderboard'),
   setLeaderboard: (inp) => ipcRenderer.invoke('api:set-leaderboard',inp),
   setUnityInstance: (ins) => ipcRenderer.invoke('api:set-unity',ins),
-  getUnityInstance: () => ipcRenderer.invoke('api:get-unity')
+  getUnityInstance: () => ipcRenderer.invoke('api:get-unity'),
+  reloadWindow: ()=> ipcRenderer.invoke('api:reload-main'),
 };
 window.electronAPI = electronAPI;
 /*
