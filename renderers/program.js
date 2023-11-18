@@ -38,6 +38,11 @@ window.top.onmessage = function(e) {
 async function sendLeaderData(data)
 {
     var profile = await window.electronAPI.getProfile();
+    if(!profile)
+    {
+        console.log('not logged in, not sending data');
+        return null;
+    }
     var inputData = {points: data.points, game:data.game, uid:profile.sub, name:profile.name};
     console.log(inputData);
     var output = await window.electronAPI.setLeaderboard(inputData);
