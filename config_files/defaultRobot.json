@@ -25,25 +25,25 @@
 			"encoder": 560
 		},
 		{
-			"name": "motor5",
+			"name": "m5-arm-up/dnw",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560
 		},
 		{
-			"name": "motor6",
+			"name": "m6-pixel",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560
 		},
 		{
-			"name": "motor7",
+			"name": "m7-launch",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560
 		},
 		{
-			"name": "motor8",
+			"name": "m8-tilt-pixel",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560

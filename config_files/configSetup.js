@@ -137,7 +137,7 @@ function javaNaming(str) {
 	if (defaultBot) {
 		str = str.replaceAll('"left_drive"', '"frontLeft"');
 		str = str.replaceAll('"right_drive"', '"frontRight"');
-		str = str.replaceAll('"left_arm"', '"motor7"');
+		str = str.replaceAll('"left_arm"', '"m7-launch"');
 		str = str.replaceAll('"sensor_range"', '"frontDistanceSensor"');
 	}
 	return str;
