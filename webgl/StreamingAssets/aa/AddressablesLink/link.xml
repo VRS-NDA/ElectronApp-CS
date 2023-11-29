@@ -2,7 +2,6 @@
   <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="BackdropScorer" preserve="all" />
     <type fullname="DebugDriverAmounts" preserve="all" />
-    <type fullname="DisplayLeaderboard" preserve="all" />
     <type fullname="DisplayScoring" preserve="all" />
     <type fullname="DistanceToFloor" preserve="all" />
     <type fullname="DriveReceiverMoveRelative" preserve="all" />
@@ -11,8 +10,8 @@
     <type fullname="GenerateKeybindList" preserve="all" />
     <type fullname="GrabberMP" preserve="all" />
     <type fullname="HookScoring" preserve="all" />
+    <type fullname="MyDetector" preserve="all" />
     <type fullname="NetworkControls" preserve="all" />
-    <type fullname="OptionsPopulator" preserve="all" />
     <type fullname="PixelDropper" preserve="all" />
     <type fullname="PlaceRandomizationObject" preserve="all" />
     <type fullname="Plane" preserve="all" />
@@ -20,7 +19,6 @@
     <type fullname="RebindSaveLoad" preserve="all" />
     <type fullname="RobotNetControl" preserve="all" />
     <type fullname="SceneCombiner" preserve="all" />
-    <type fullname="ScoreOutput" preserve="all" />
     <type fullname="SetMaterialOnChildren" preserve="all" />
     <type fullname="SetPixelColor" preserve="all" />
     <type fullname="TeamInventory" preserve="all" />
@@ -154,7 +152,7 @@
     <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
     <type fullname="UnityEngine.AddressableAssets.AssetReference" preserve="nothing" serialized="true" />
   </assembly>
-  <assembly fullname="Unity.InputSystem, Version=1.6.3.0, Culture=neutral, PublicKeyToken=null">
+  <assembly fullname="Unity.InputSystem, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.InputSystem.InputActionAsset" preserve="all" />
     <type fullname="UnityEngine.InputSystem.InputActionReference" preserve="all" />
     <type fullname="UnityEngine.InputSystem.PlayerInput" preserve="all" />
@@ -264,6 +262,7 @@
   </assembly>
   <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.EventSystems.EventSystem" preserve="all" />
+    <type fullname="UnityEngine.EventSystems.StandaloneInputModule" preserve="all" />
     <type fullname="UnityEngine.UI.Button" preserve="all" />
     <type fullname="UnityEngine.UI.CanvasScaler" preserve="all" />
     <type fullname="UnityEngine.UI.GraphicRaycaster" preserve="all" />

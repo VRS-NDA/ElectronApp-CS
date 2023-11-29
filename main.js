@@ -1,11 +1,15 @@
-const { app, ipcMain, BrowserWindow } = require('electron')
-const path = require('path')
+const { app, ipcMain, BrowserWindow } = require("electron");
+const path = require("path");
 
-const { createAuthWindow, createLogoutWindow, createLoginWindow } = require('./main/auth-process');
-const authService = require('./services/auth-service');
-const apiService = require('./services/api-service');
-const leaderboardservice = require('./services/leaderboard-service');
-const createAppWindow = require('./main/app-process');
+const {
+  createAuthWindow,
+  createLogoutWindow,
+  createLoginWindow,
+} = require("./main/auth-process");
+const authService = require("./services/auth-service");
+const apiService = require("./services/api-service");
+const leaderboardservice = require("./services/leaderboard-service");
+const createAppWindow = require("./main/app-process");
 
 //console.log(leaderboardservice);
 var appWindow = null;
@@ -18,7 +22,8 @@ if (handleSquirrelEvent(app)) {
 async function createWindow() {
   // Create the browser window.
   const gotTheLock = app.requestSingleInstanceLock();
-  if (gotTheLock) { // Enters if no other instance of the app is running
+  if (gotTheLock) {
+    // Enters if no other instance of the app is running
 
     try {
       await authService.refreshTokens();
@@ -28,7 +33,6 @@ async function createWindow() {
     }
 
     //Set up main window
-    
   } else {
     //Close the app if it is already running
     app.quit();
@@ -44,33 +48,31 @@ async function createWindow() {
   })
 })*/
 
-app.on('ready', () => {
+app.on("ready", () => {
   // Handle IPC messages from the renderer process.
-  ipcMain.handle('auth:get-profile', authService.getProfile);
-  ipcMain.handle('api:get-private-data', apiService.getPrivateData);
-  ipcMain.handle('api:get-leaderboard', leaderboardservice.getLeaderboard);
-  ipcMain.handle('api:get-unity', apiService.getUnity);
-  ipcMain.handle('api:set-leaderboard', async (event, someArgument) => {
+  ipcMain.handle("auth:get-profile", authService.getProfile);
+  ipcMain.handle("api:get-private-data", apiService.getPrivateData);
+  ipcMain.handle("api:get-leaderboard", leaderboardservice.getLeaderboard);
+  ipcMain.handle("api:get-unity", apiService.getUnity);
+  ipcMain.handle("api:set-leaderboard", async (event, someArgument) => {
     const result = await leaderboardservice.sendToLeaderboard(someArgument);
     return result;
   });
-  ipcMain.handle('api:set-unity', (event, ins) => {
+  ipcMain.handle("api:set-unity", (event, ins) => {
     apiService.setUnity(ins);
   });
-  
-  ipcMain.handle('api:reload-main', () => {
-    if(appWindow)
-    {
-        appWindow.webContents.reloadIgnoringCache();
+
+  ipcMain.handle("api:reload-main", () => {
+    if (appWindow) {
+      appWindow.webContents.reloadIgnoringCache();
     }
-    
   });
-  
-  ipcMain.on('auth:log-out', () => {
+
+  ipcMain.on("auth:log-out", () => {
     //BrowserWindow.getAllWindows().forEach(window => window.close());
     createLogoutWindow();
   });
-  ipcMain.on('auth:log-in', () => {
+  ipcMain.on("auth:log-in", () => {
     //BrowserWindow.getAllWindows().forEach(window => window.close());
     createLoginWindow();
   });
@@ -78,21 +80,21 @@ app.on('ready', () => {
   //showWindow();
 });
 
-app.on('window-all-closed', function () {
-  if (process.platform !== 'darwin') app.quit()
-})
+app.on("window-all-closed", function () {
+  if (process.platform !== "darwin") app.quit();
+});
 
 function handleSquirrelEvent(application) {
   if (process.argv.length === 1) {
     return false;
   }
 
-  const ChildProcess = require('child_process');
-  const path = require('path');
+  const ChildProcess = require("child_process");
+  const path = require("path");
 
-  const appFolder = path.resolve(process.execPath, '..');
-  const rootAtomFolder = path.resolve(appFolder, '..');
-  const updateDotExe = path.resolve(path.join(rootAtomFolder, 'Update.exe'));
+  const appFolder = path.resolve(process.execPath, "..");
+  const rootAtomFolder = path.resolve(appFolder, "..");
+  const updateDotExe = path.resolve(path.join(rootAtomFolder, "Update.exe"));
   const exeName = path.basename(process.execPath);
 
   const spawn = function (command, args) {
@@ -100,9 +102,9 @@ function handleSquirrelEvent(application) {
 
     try {
       spawnedProcess = ChildProcess.spawn(command, args, {
-        detached: true
+        detached: true,
       });
-    } catch (error) { }
+    } catch (error) {}
 
     return spawnedProcess;
   };
@@ -113,30 +115,30 @@ function handleSquirrelEvent(application) {
 
   const squirrelEvent = process.argv[1];
   switch (squirrelEvent) {
-    case '--squirrel-install':
-    case '--squirrel-updated':
+    case "--squirrel-install":
+    case "--squirrel-updated":
       // Optionally do things such as:
       // - Add your .exe to the PATH
       // - Write to the registry for things like file associations and
       //   explorer context menus
 
       // Install desktop and start menu shortcuts
-      spawnUpdate(['--createShortcut', exeName]);
+      spawnUpdate(["--createShortcut", exeName]);
 
       setTimeout(application.quit, 1000);
       return true;
 
-    case '--squirrel-uninstall':
+    case "--squirrel-uninstall":
       // Undo anything you did in the --squirrel-install and
       // --squirrel-updated handlers
 
       // Remove desktop and start menu shortcuts
-      spawnUpdate(['--removeShortcut', exeName]);
+      spawnUpdate(["--removeShortcut", exeName]);
 
       setTimeout(application.quit, 1000);
       return true;
 
-    case '--squirrel-obsolete':
+    case "--squirrel-obsolete":
       // This is called on the outgoing version of your app before
       // we update to the new version - it's the opposite of
       // --squirrel-updated
@@ -144,4 +146,4 @@ function handleSquirrelEvent(application) {
       application.quit();
       return true;
   }
-};
+}
