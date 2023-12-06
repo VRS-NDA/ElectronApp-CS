@@ -1,9 +1,9 @@
 const cacheName = "VirtualFTC-Robot Simulator-0.1";
 const contentToCache = [
-    "Build/build.loader.js",
-    "Build/build.framework.js.unityweb",
-    "Build/build.data.unityweb",
-    "Build/build.wasm.unityweb",
+    "Build/Build.loader.js",
+    "Build/Build.framework.js.unityweb",
+    "Build/Build.data.unityweb",
+    "Build/Build.wasm.unityweb",
     "TemplateData/style.css"
 
 ];
