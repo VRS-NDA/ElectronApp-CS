@@ -15,6 +15,7 @@
     <type fullname="OptionsPopulator" preserve="all" />
     <type fullname="Plane" preserve="all" />
     <type fullname="PlaneMP" preserve="all" />
+    <type fullname="PopulateDropdownFromRegister" preserve="all" />
     <type fullname="RandomizationController_MP" preserve="all" />
     <type fullname="RebindSaveLoad" preserve="all" />
     <type fullname="Robot" preserve="all" />
@@ -68,6 +69,7 @@
     <type fullname="ObjectGrabber" preserve="all" />
     <type fullname="ObjectLauncher" preserve="all" />
     <type fullname="ObjectType" preserve="all" />
+    <type fullname="OptionProperty" preserve="all" />
     <type fullname="PixelDropper" preserve="all" />
     <type fullname="PlaceRandomizationObject" preserve="all" />
     <type fullname="RandomizationController" preserve="all" />
@@ -196,12 +198,15 @@
   </assembly>
   <assembly fullname="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="TMPro.TextMeshProUGUI" preserve="all" />
+    <type fullname="TMPro.TMP_Dropdown" preserve="all" />
     <type fullname="TMPro.TMP_FontAsset" preserve="all" />
     <type fullname="TMPro.TMP_InputField" preserve="all" />
     <type fullname="TMPro.FaceInfo_Legacy" preserve="nothing" serialized="true" />
     <type fullname="TMPro.FontAssetCreationSettings" preserve="nothing" serialized="true" />
     <type fullname="TMPro.KerningTable" preserve="nothing" serialized="true" />
     <type fullname="TMPro.TMP_Character" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_Dropdown/DropdownEvent" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_Dropdown/OptionDataList" preserve="nothing" serialized="true" />
     <type fullname="TMPro.TMP_FontFeatureTable" preserve="nothing" serialized="true" />
     <type fullname="TMPro.TMP_FontWeightPair" preserve="nothing" serialized="true" />
     <type fullname="TMPro.TMP_GlyphAdjustmentRecord" preserve="nothing" serialized="true" />
