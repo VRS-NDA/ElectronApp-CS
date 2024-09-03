@@ -25,25 +25,25 @@
 			"encoder": 560
 		},
 		{
-			"name": "m5-arm-up/dn",
+			"name": "m5-extends front arm",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560
 		},
 		{
-			"name": "m6-pixel",
+			"name": "m6-release sample",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560
 		},
 		{
-			"name": "m7-launch",
+			"name": "m7-move lifts up&down",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560
 		},
 		{
-			"name": "m8-tilt-pixel",
+			"name": "m8-tilt-arm",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560
