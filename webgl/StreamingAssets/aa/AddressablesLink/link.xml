@@ -13,18 +13,13 @@
     <type fullname="MyDetector" preserve="all" />
     <type fullname="NetworkControls" preserve="all" />
     <type fullname="OptionsPopulator" preserve="all" />
-    <type fullname="Plane" preserve="all" />
-    <type fullname="PlaneMP" preserve="all" />
     <type fullname="PopulateDropdownFromRegister" preserve="all" />
     <type fullname="RandomizationController_MP" preserve="all" />
     <type fullname="RebindSaveLoad" preserve="all" />
     <type fullname="Robot" preserve="all" />
-    <type fullname="RobotNetControl" preserve="all" />
     <type fullname="RobotPartInfo" preserve="all" />
     <type fullname="ScoreOutput" preserve="all" />
-    <type fullname="ScoringManagerMP" preserve="all" />
     <type fullname="SetCourse" preserve="all" />
-    <type fullname="StackManagerMP" preserve="all" />
     <type fullname="TeamInventory_MP" preserve="all" />
     <type fullname="ToggleWindow" preserve="all" />
     <type fullname="UnityEngine.InputSystem.Samples.RebindUI.RebindActionUI" preserve="all" />
@@ -72,6 +67,7 @@
     <type fullname="OptionProperty" preserve="all" />
     <type fullname="PixelDropper" preserve="all" />
     <type fullname="PlaceRandomizationObject" preserve="all" />
+    <type fullname="Plane" preserve="all" />
     <type fullname="RandomizationController" preserve="all" />
     <type fullname="RoundReceiver" preserve="all" />
     <type fullname="SceneCombiner" preserve="all" />
@@ -101,6 +97,10 @@
   <assembly fullname="com.vftc.robotmultiplayer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="GrabberMP" preserve="all" />
     <type fullname="OnGrabPhotonHandler" preserve="all" />
+    <type fullname="PlaneMP" preserve="all" />
+    <type fullname="RobotNetControl" preserve="all" />
+    <type fullname="ScoringManagerMP" preserve="all" />
+    <type fullname="StackManagerMP" preserve="all" />
     <type fullname="SyncGameTime" preserve="all" />
     <type fullname="UserSingleton" preserve="all" />
     <type fullname="vrs_messenger" preserve="all" />
@@ -137,12 +137,12 @@
     <type fullname="JunctionCapper" preserve="all" />
     <type fullname="KeyBoundButton" preserve="all" />
     <type fullname="KnockedOverConeStackPenalizer" preserve="all" />
+    <type fullname="MPFieldManager" preserve="all" />
     <type fullname="ObjectPresentInGoalZone" preserve="all" />
     <type fullname="OptionList" preserve="all" />
     <type fullname="OptionListImage" preserve="all" />
     <type fullname="PenaltyWrongColor" preserve="all" />
     <type fullname="PopulateListWithBots" preserve="all" />
-    <type fullname="PowerPlayFieldManager" preserve="all" />
     <type fullname="ReleaseObjectInField" preserve="all" />
     <type fullname="ReleaseSubstationCone" preserve="all" />
     <type fullname="RestartScene" preserve="all" />
