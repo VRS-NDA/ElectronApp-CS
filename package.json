@@ -1,6 +1,6 @@
 {
   "name": "VRS Into The Deep",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "version_date": "September 4, 2024",
   "description": "Downloadable Virtual Robot Simulator Platform",
   "main": "main.js",
@@ -9,7 +9,7 @@
     "package-win": "electron-packager . --platform=win32 --arch=x64 --prune=true --out=release-builds --icon=logo.ico --overwrite",
     "package-mac": "electron-packager . --overwrite --platform=darwin --prune=true --arch=x64 --out=release-builds --icon=logo.icns",
     "build-installer": "cd release-builds; node build.js",
-	"release": "genversion lib/version.js"
+    "release": "genversion lib/version.js"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
