@@ -696,8 +696,7 @@
 	<div id="NavItems">
 		<div class="NavText" id="name"></div>
 		<button class="NavButtons" id="logout">Logout</button>
-		<button class="NavButtons" id="how-to-use-button">How
-			To Use</button>
+		<button class="NavButtons" id="how-to-use-button">VRS Guidebook</button>
 		<button class="NavButtons" id="more-how-to-button">Lessons
 			on How to Use</button>
 		<button class="NavButtons" id="feedback-button">Feedback</button>
@@ -737,8 +736,11 @@
 			</div>
 		</div>
 	</div>
-
+	<script>exports = {};//Autogen this</script>
+	<script src="./version.js"></script>
 	<script>
+		document.getElementById('VersionText').innerText = "Version "+exports.version+" - "+exports.version_date;
+		
 		document.getElementById('localButton').addEventListener('click', () => {
 			window.dataLayer.push({ 'event': 'click', 'label': 'Programming button' })
 			nextPage('programpage.html');
@@ -749,12 +751,12 @@
 		})
 		document.getElementById('how-to-use-button').addEventListener('click', () => {
 			window.dataLayer.push({ 'event': 'click', 'label': 'How to use button' })
-			overlay('https://www.youtube.com/embed/woGm9D8JqAQ?si=CkgxIiRQyk65o_ff', true)
+			overlay('guide/VRS Official Guidebook PDF.pdf', true)
 		})
 		document.getElementById('more-how-to-button').addEventListener('click', () => {
 			window.dataLayer.push({ 'event': 'click', 'label': 'More on How to Use' })
-			overlay('https://docs.google.com/document/d/e/2PACX-1vQV2H0gKgN3bhMRAw3UAjaA4crHYuqfqVDWTJaHp6k8fyPi4cHDNXBwM2J2XIe1uxYapXNrDQkO82KE/pub', true)
-		})
+			overlay('https://tinyurl.com/29jcpbcc', true)
+		}) 
 		document.getElementById('feedback-button').addEventListener('click', () => {
 			window.dataLayer.push({ 'event': 'click', 'label': 'More on How to Use' })
 			overlay('https://forms.gle/M2N8oxpnGT5mRUQi9', true)
