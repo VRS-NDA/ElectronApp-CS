@@ -1,6 +1,6 @@
 {
   "name": "VRS Into The Deep",
-  "version": "2.6.3",
+  "version": "2.6.4",
   "version_date": "9/5/2024",
   "description": "Downloadable Virtual Robot Simulator Platform",
   "main": "main.js",
