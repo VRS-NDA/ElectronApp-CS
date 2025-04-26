@@ -25,7 +25,7 @@
 			"encoder": 560
 		},
 		{
-			"name": "m5-extends front arm",
+			"name": "m5",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560
@@ -37,13 +37,13 @@
 			"encoder": 560
 		},
 		{
-			"name": "m7-move lifts up&down",
+			"name": "m7",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560
 		},
 		{
-			"name": "m8-tilt-arm",
+			"name": "m8",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560

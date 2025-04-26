@@ -1,5 +1,5 @@
 UnityInstance = null;
-
+this.stopped = true;
 window.onmessage = function(e) {
     if (e.data) {
         console.log('unityins recvd');
@@ -11,6 +11,7 @@ window.onmessage = function(e) {
 
 Leaderboard = null
 var alreadySetPlayMode = false;
+var setCourse = false;
 function check() {
     if (UnityInstance != null) {
 
@@ -19,18 +20,24 @@ function check() {
         //console.log(window.top[1].electronAPI);
         var playMode = localStorage.getItem('playMode');
         var isProgramPage = localStorage.getItem('ProgramPage');
+        var courseSelected = localStorage.getItem('CourseName');
+        if(courseSelected != "" && !setCourse)
+        {
+            UnityInstance.SendMessage("VRS Singleton", "SetCourse", courseSelected);
+            setCourse = true;
+        }
         if (playMode == "Autonomous" && !alreadySetPlayMode) {
             UnityInstance.SendMessage("VRS Singleton", "SetPlaymode", 1);
             UnityInstance.SendMessage("Main Menu", "changeSinglePlayer");
             alreadySetPlayMode = true;
+            setTimeout(writeMotorPowers, 1);
         } else if (playMode == "TeleOp" && !alreadySetPlayMode) {
             UnityInstance.SendMessage("VRS Singleton", "SetPlaymode", 2);
             // alert("VRS Multiplayer is optimized with fullscreen mode. Please click on the blue button below the game window.");
             alreadySetPlayMode = true;
         }
-        if (playMode == "Autonomous" && isProgramPage) {
-            UnityInstance.SendMessage("VRS Singleton", "SetPlaymode", 1);
-            setTimeout(writeMotorPowers, 1);
+        if (playMode == "Autonomous" && isProgramPage && alreadySetPlayMode) {
+            //setTimeout(writeMotorPowers, 1);
         }
         if(Leaderboard)
         {
@@ -61,12 +68,24 @@ function writeMotorPowers() {
     if (localStorage.getItem('startMatch') == 'true') {
         UnityInstance.SendMessage("FieldManager", "buttonStartGame");
         localStorage.setItem('startMatch', false);
-    } else if (localStorage.getItem('stopMatch') == 'true') {
+        console.log("StartMatch");
+        this.stopped = false;
+    } else if (localStorage.getItem('stopMatch') == 'true' && !this.stopped) {
         UnityInstance.SendMessage("FieldManager", "buttonStopGame");
         localStorage.setItem('stopMatch', false);
+        setTimeout(disableMotorWrite, 200);
+        console.log("StopMatch");
     } if (localStorage.getItem('resetField') == 'true' && localStorage.getItem('ProgramPage') == 'true') {
         UnityInstance.SendMessage("FieldManager", "autoResetFieldToo");
         localStorage.setItem('resetField', false);
+        console.log("ResetMatch");
+        this.stopped = false;
+    }
+    if(this.stopped == true)
+    {
+        console.log("Stopped");
+        setTimeout(writeMotorPowers, 1);
+        return;
     }
 
     var motors = JSON.parse(localStorage.getItem('motorPowers'));
@@ -80,8 +99,7 @@ function writeMotorPowers() {
             servos[i] = 0;
 
     // localStorage.setItem('motorResetEncoders', "[false, false, false, false, false, false, false, false]");
-
-
+    //console.log(motors);
     // //Old Code (Lean off of using this)
     // for (var i = 0; i < encoderResets.length; i++)
     //     if (encoderResets[i] == true)
@@ -141,6 +159,12 @@ function writeMotorPowers() {
     //Implement Servos once Unity is ready
 
     check();
+    setTimeout(writeMotorPowers, 1);
+}
+
+function disableMotorWrite()
+{
+    this.stopped = true;
 }
 
 function sendToLeaderboard(points,game)
