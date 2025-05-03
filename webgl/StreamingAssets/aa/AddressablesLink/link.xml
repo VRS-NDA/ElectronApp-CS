@@ -29,6 +29,24 @@
     <type fullname="UnityEngine.InputSystem.Samples.RebindUI.RebindActionUI/InteractiveRebindEvent" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.InputSystem.Samples.RebindUI.RebindActionUI/UpdateBindingUIEvent" preserve="nothing" serialized="true" />
   </assembly>
+  <assembly fullname="com.vftc.bounddata, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="ColorChanging" preserve="all" />
+    <type fullname="CreateThumbnail" preserve="all" />
+    <type fullname="DisplayIcon" preserve="all" />
+    <type fullname="InvertValue" preserve="all" />
+    <type fullname="ItemListConfigHandler" preserve="all" />
+    <type fullname="ListResizer" preserve="all" />
+    <type fullname="OnBoolSet" preserve="all" />
+    <type fullname="RobotComponentDatabank" preserve="all" />
+    <type fullname="SetToggleBG" preserve="all" />
+    <type fullname="SetToggleIcon" preserve="all" />
+    <type fullname="SublistAnim" preserve="all" />
+    <type fullname="UIBoundData" preserve="all" />
+    <type fullname="UIChildren" preserve="all" />
+    <type fullname="UID_DataList" preserve="all" />
+    <type fullname="UID_MultiEdit" preserve="all" />
+    <type fullname="UIDataTag" preserve="all" />
+  </assembly>
   <assembly fullname="com.vftc.robotconstructionkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="AreaScorer" preserve="all" />
     <type fullname="BackdropScorer" preserve="all" />
@@ -76,11 +94,13 @@
     <type fullname="PlaceRandomizationObject" preserve="all" />
     <type fullname="Plane" preserve="all" />
     <type fullname="RandomizationController" preserve="all" />
+    <type fullname="RandomWithinZoneSpawner" preserve="all" />
     <type fullname="RestartScene" preserve="all" />
     <type fullname="Robot" preserve="all" />
     <type fullname="RobotPartInfo" preserve="all" />
     <type fullname="RoundReceiver" preserve="all" />
     <type fullname="SceneCombiner" preserve="all" />
+    <type fullname="ScoreObjectLink" preserve="all" />
     <type fullname="ScoreObjectTypeLink" preserve="all" />
     <type fullname="ScoreReceiver" preserve="all" />
     <type fullname="ScoreTrackerIndex" preserve="all" />
@@ -91,13 +111,15 @@
     <type fullname="SetCourse" preserve="all" />
     <type fullname="SetMaterialOnChildren" preserve="all" />
     <type fullname="SetPixelColor" preserve="all" />
+    <type fullname="SimSettingsData" preserve="all" />
     <type fullname="spawnAddressablePrefab" preserve="all" />
     <type fullname="SpawnPiecesInArea" preserve="all" />
+    <type fullname="StackedObjectSpawner" preserve="all" />
     <type fullname="SyncRotationToObject" preserve="all" />
     <type fullname="TeamInventory" preserve="all" />
     <type fullname="TouchSensor" preserve="all" />
-    <type fullname="BotData" preserve="nothing" serialized="true" />
     <type fullname="DriveSet" preserve="nothing" serialized="true" />
+    <type fullname="BotData" preserve="nothing" serialized="true" />
     <type fullname="KeybindName" preserve="nothing" serialized="true" />
     <type fullname="Round" preserve="nothing" serialized="true" />
     <type fullname="ScorePerSessionPerType" preserve="nothing" serialized="true" />
@@ -106,6 +128,37 @@
   </assembly>
   <assembly fullname="com.vftc.robotconstructionkit.editor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="ObjectSpawnPositionTracker" preserve="all" />
+  </assembly>
+  <assembly fullname="com.vftc.robotimporter, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="ControlsPanel" preserve="all" />
+    <type fullname="HoverEffect" preserve="all" />
+    <type fullname="HoverVisual" preserve="all" />
+    <type fullname="ImporterSettings" preserve="all" />
+    <type fullname="ImporterSettingsData" preserve="all" />
+    <type fullname="LoadSubScene" preserve="all" />
+    <type fullname="MakePartsSelectable" preserve="all" />
+    <type fullname="MotorTest" preserve="all" />
+    <type fullname="MouseHover" preserve="all" />
+    <type fullname="PartLists" preserve="all" />
+    <type fullname="RobotConfigForPlay" preserve="all" />
+    <type fullname="RobotConfigManager" preserve="all" />
+    <type fullname="RobotFileManager" preserve="all" />
+    <type fullname="RobotManager" preserve="all" />
+    <type fullname="ScrollableField" preserve="all" />
+    <type fullname="SelectHandlerTransform" preserve="all" />
+    <type fullname="SensorConfigStep" preserve="all" />
+    <type fullname="TransformPlacement" preserve="all" />
+    <type fullname="UIBehavior" preserve="all" />
+    <type fullname="VFTC.Components.ComponentUIItem" preserve="all" />
+    <type fullname="VFTC.Wizard.AreaSelect" preserve="all" />
+    <type fullname="VFTC.Wizard.RobotConfigWizard" preserve="all" />
+    <type fullname="VFTC.Wizard.WizardStep" preserve="all" />
+    <type fullname="WheelScript" preserve="all" />
+    <type fullname="VFTC.Wizard.PartType" preserve="nothing" serialized="true" />
+    <type fullname="VFTC.Wizard.RobotConfig" preserve="nothing" serialized="true" />
+    <type fullname="VFTC.Wizard.SelectedArea" preserve="nothing" serialized="true" />
+    <type fullname="VFTC.Wizard.V3S" preserve="nothing" serialized="true" />
+    <type fullname="VFTC.Wizard.MicroStep" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="com.vftc.robotmultiplayer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="CameraPosition" preserve="all" />
@@ -149,7 +202,6 @@
     <type fullname="ShowGamepadIcon" preserve="all" />
     <type fullname="ToggleWindow" preserve="all" />
     <type fullname="UIDataFill" preserve="all" />
-    <type fullname="UIDataTag" preserve="all" />
     <type fullname="KBindOverride" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="GameScripts, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -239,6 +291,7 @@
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
   </assembly>
   <assembly fullname="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="TMPro.TextMeshPro" preserve="all" />
     <type fullname="TMPro.TextMeshProUGUI" preserve="all" />
     <type fullname="TMPro.TMP_Dropdown" preserve="all" />
     <type fullname="TMPro.TMP_FontAsset" preserve="all" />
@@ -260,6 +313,7 @@
     <type fullname="TMPro.TMP_InputField/TextSelectionEvent" preserve="nothing" serialized="true" />
     <type fullname="TMPro.TMP_InputField/TouchScreenKeyboardEvent" preserve="nothing" serialized="true" />
     <type fullname="TMPro.VertexGradient" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_Dropdown/OptionData" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="UnityEditor.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEditor.Audio.AudioMixerSnapshotController" preserve="all" />
@@ -302,6 +356,7 @@
     <type fullname="UnityEngine.SkinnedMeshRenderer" preserve="all" />
     <type fullname="UnityEngine.Sprite" preserve="all" />
     <type fullname="UnityEngine.SpriteRenderer" preserve="all" />
+    <type fullname="UnityEngine.TextAsset" preserve="all" />
     <type fullname="UnityEngine.Texture2D" preserve="all" />
     <type fullname="UnityEngine.Transform" preserve="all" />
     <type fullname="UnityEngine.Events.ArgumentCache" preserve="nothing" serialized="true" />
@@ -313,6 +368,10 @@
     <type fullname="UnityEngine.Events.UnityEvent`1[UnityEngine.GameObject]" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.Events.UnityEvent`2[UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.LoadSceneMode]" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.RectOffset" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent`1[System.Boolean]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent`1[System.Object]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent`1[VFTC.Wizard.RobotConfig]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent`1[VFTC.Wizard.StepConfig]" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.Events.UnityEvent`1[System.Single]" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -336,15 +395,19 @@
   <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.EventSystems.BaseInput" preserve="all" />
     <type fullname="UnityEngine.EventSystems.EventSystem" preserve="all" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger" preserve="all" />
+    <type fullname="UnityEngine.EventSystems.PhysicsRaycaster" preserve="all" />
     <type fullname="UnityEngine.EventSystems.StandaloneInputModule" preserve="all" />
     <type fullname="UnityEngine.UI.Button" preserve="all" />
     <type fullname="UnityEngine.UI.CanvasScaler" preserve="all" />
+    <type fullname="UnityEngine.UI.ContentSizeFitter" preserve="all" />
     <type fullname="UnityEngine.UI.GraphicRaycaster" preserve="all" />
     <type fullname="UnityEngine.UI.GridLayoutGroup" preserve="all" />
     <type fullname="UnityEngine.UI.HorizontalLayoutGroup" preserve="all" />
     <type fullname="UnityEngine.UI.Image" preserve="all" />
     <type fullname="UnityEngine.UI.LayoutElement" preserve="all" />
     <type fullname="UnityEngine.UI.Mask" preserve="all" />
+    <type fullname="UnityEngine.UI.Outline" preserve="all" />
     <type fullname="UnityEngine.UI.RawImage" preserve="all" />
     <type fullname="UnityEngine.UI.RectMask2D" preserve="all" />
     <type fullname="UnityEngine.UI.Scrollbar" preserve="all" />
@@ -366,6 +429,8 @@
     <type fullname="UnityEngine.UI.Slider/SliderEvent" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.SpriteState" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.Toggle/ToggleEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger/Entry" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger/TriggerEvent" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.Canvas" preserve="all" />
