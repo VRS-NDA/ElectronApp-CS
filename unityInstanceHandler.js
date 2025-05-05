@@ -1,6 +1,13 @@
 UnityInstance = null;
-import { checkMode } from './modules/RSM-CodeExecutionModule/src/importerEvents.mjs';
+//import { checkMode } from './modules/RSM-CodeExecutionModule/src/importerEvents.mjs';
+// In your .js file
+CheckUnityMode = null;
 
+async function useMJS() {
+    const module = await import('./modules/RSM-CodeExecutionModule/src/importerEvents.mjs');
+    CheckUnityMode = module.checkMode;
+}
+  useMJS();
 
 window.onmessage = function(e) {
     if (e.data) {
@@ -23,7 +30,11 @@ function check() {
         var isProgramPage = localStorage.getItem('ProgramPage');
 
         //Check for importer being active
-        checkMode(document);
+        if(CheckUnityMode != null)
+        {
+            CheckUnityMode();
+        }
+        //checkMode(document);
         
         if (playMode == "Autonomous" && !alreadySetPlayMode) {
             UnityInstance.SendMessage("VRS Singleton", "SetPlaymode", 1);
@@ -160,4 +171,3 @@ function requestLeaderboard()
 {
     window.top.postMessage({action:"getleader"},'*');
 }
-
