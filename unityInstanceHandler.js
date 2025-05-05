@@ -19,6 +19,22 @@ window.onmessage = function(e) {
 Leaderboard = null
 var alreadySetPlayMode = false;
 var setCourse = false;
+
+function mode_checks()
+{
+    if (UnityInstance == null)
+    {
+        setTimeout(mode_checks, 500);
+        return;
+    }
+    //Check for importer being active
+    if(CheckUnityMode != null)
+    {
+        CheckUnityMode();
+    }
+    setTimeout(mode_checks, 500);
+}
+
 function check() {
     if (UnityInstance != null) {
         //window.electronAPI.setUnityInstance(UnityInstance);
@@ -26,14 +42,6 @@ function check() {
         //console.log(window.top[1].electronAPI);
         var playMode = localStorage.getItem('playMode');
         var isProgramPage = localStorage.getItem('ProgramPage');
-
-        //Check for importer being active
-        if(CheckUnityMode != null)
-        {
-            CheckUnityMode();
-            
-        }
-        //checkMode(document);
         
         var courseSelected = localStorage.getItem('CourseName');
         if(courseSelected != "" && !setCourse)
@@ -78,6 +86,7 @@ function check() {
 }
 
 check();
+mode_checks();
 
 function writeMotorPowers() {
     if (localStorage.getItem('startMatch') == 'true') {
