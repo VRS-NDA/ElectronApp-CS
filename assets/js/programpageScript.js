@@ -1,3 +1,5 @@
+
+
 //Wait for 3 HttpRequests and then load last saved program
 settingUp = 4;
 
@@ -313,15 +315,15 @@ window.addEventListener("resize", function () {
 });
 
 //Scroll Features for Lists
-document.getElementById("textSelection").addEventListener("wheel", function (event) {
-	document.getElementById("textSelection").scrollLeft += (event.deltaY + event.deltaX) * 0.5;
+document.getElementById("telemetryContainer").addEventListener("wheel", function (event) {
+	document.getElementById("telemetryContainer").scrollLeft += (event.deltaY + event.deltaX) * 0.5;
 	event.preventDefault();
 });
-document.getElementById("textSelection").addEventListener("touchstart", function (event) {
+document.getElementById("telemetryContainer").addEventListener("touchstart", function (event) {
 	touchStart = event.targetTouches[0].clientX;
 });
-document.getElementById("textSelection").addEventListener("touchmove", function (event) {
-	document.getElementById("textSelection").scrollLeft -=
+document.getElementById("telemetryContainer").addEventListener("touchmove", function (event) {
+	document.getElementById("telemetryContainer").scrollLeft -=
 		event.targetTouches[0].clientX - touchStart;
 	touchStart = event.targetTouches[0].clientX;
 });
@@ -373,7 +375,7 @@ function runHowTo() {
 		switchToBlocks();
 		document.getElementById("howToText").style.display = "inherit";
 		document.getElementById("howToIntro").style.animation = "popUpClose .5s ease forwards";
-		document.getElementById("textSelection").children[1].click();
+		document.getElementById("telemetryContainer").children[1].click();
 		resizeScreens();
 		resetProgramExecution();
 		resetField();
@@ -461,7 +463,7 @@ function runHowTo() {
 		case 13:
 			document.getElementById("howToScreen").style.clipPath =
 				"polygon(0% 0%, 0% 100%, 50% 100%, 50% 40px, 100% 40px, 100% 52.5%, 0% 52.5%, 0% 100%, 100% 100%, 100% 0%)";
-			document.getElementById("textSelection").children[5].click();
+			document.getElementById("telemetryContainer").children[5].click();
 			break;
 		case 14:
 			document.getElementById("howToScreen").style.clipPath =
@@ -675,7 +677,7 @@ function stopHowTo() {
 	document.getElementById("howToText").style.opacity = "0";
 	document.getElementById("howToOverlay").style.animation =
 		"hideOverlay .5s ease 1 normal forwards";
-	document.getElementById("textSelection").children[1].click();
+	document.getElementById("telemetryContainer").children[1].click();
 
 	document.getElementById("programInit").style.position = "inherit";
 	document.getElementById("programInit").style.zIndex = "inherit";
@@ -1133,8 +1135,20 @@ let halfScreenPath = "./assets/icons/halfScreen.png";
 document.getElementById("fieldViewiframe").width = "100%";
 document.getElementById("fullScreenIcon").src = fullScreenPath;
 
-function toggleFullScreen() {
-	modeFullScreen = !modeFullScreen;
+function toggleFullScreen(forceMode) {
+	if(forceMode = "full")
+	{
+		modeFullScreen = true;
+	}
+	else if(forceMode = "notFull")
+	{
+		modeFullScreen = false;
+	}
+	else
+	{
+		modeFullScreen = !modeFullScreen;
+	}
+	
 	if (modeFullScreen) document.getElementById("fullScreenIcon").src = halfScreenPath;
 	if (!modeFullScreen) document.getElementById("fullScreenIcon").src = fullScreenPath;
 

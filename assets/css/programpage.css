@@ -506,7 +506,7 @@ iframe {
 	top: 40px;
 	cursor: pointer;
 }
-#textSelection > div {
+#telemetryContainer > div {
 	font-size: 25px !important;
 }
 #rightScreen {

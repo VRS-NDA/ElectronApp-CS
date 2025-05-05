@@ -1,4 +1,6 @@
 UnityInstance = null;
+import { checkMode } from './modules/RSM-CodeExecutionModule/src/importerEvents.mjs';
+
 
 window.onmessage = function(e) {
     if (e.data) {
@@ -19,6 +21,10 @@ function check() {
         //console.log(window.top[1].electronAPI);
         var playMode = localStorage.getItem('playMode');
         var isProgramPage = localStorage.getItem('ProgramPage');
+
+        //Check for importer being active
+        checkMode(document);
+        
         if (playMode == "Autonomous" && !alreadySetPlayMode) {
             UnityInstance.SendMessage("VRS Singleton", "SetPlaymode", 1);
             UnityInstance.SendMessage("Main Menu", "changeSinglePlayer");

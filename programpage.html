@@ -75,7 +75,6 @@
   <script src="./codemirror/addon/hint/show-hint.js"></script>
   <script src="./codemirror/mode/clike/clike.js"></script>
   <script src="./codemirror/lib/util/formatting.js"></script>
-
   <link rel="stylesheet" href="toolbox_style.css">
 
   <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
@@ -174,7 +173,7 @@
         <div id="rightScreen">
           <div id="controlPanel" style="min-width:40%; min-height: 80vh; background-color: #242424; overflow: hidden;  ">
             <div style="width:100%; height: 10px; background-color: #4B4B4B; margin-top: 15px; margin-bottom: 20px;"></div>
-            <div id="textSelection" style="white-space: nowrap; overflow: hidden; margin-bottom: 30px;" class="buttonText">
+            <div id="telemetryContainer" style="white-space: nowrap; overflow: hidden; margin-bottom: 30px;" class="buttonText">
               <div style="width: 20px; display: inline-block; "></div>
               <!-- <div  style="display: inline-block;" onclick="switchTab(this, 0)">Telemetry</div>
               <div class="divider"></div> -->
@@ -262,7 +261,7 @@
 
   <div id="fieldView">
     <img onclick="toggleFullScreen()" src="./assets/icons/fullScreenRed.png" id="fullScreenIcon" />
-    <div id="textSelection" style=" position: absolute; z-index: 100; right: 50px; top: 35px;" class="buttonText">
+    <div id="telemetryContainer" style=" position: absolute; z-index: 100; right: 50px; top: 35px;" class="buttonText">
       <div  style="display: inline-block; color: #fff;">Telemetry</div>
       <button id="openModalBtn" class="button1">Other Options</button>
       <div style="height: 100%; overflow: scroll; margin-top: 10px;" id="telemtryOutput">
