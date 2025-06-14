@@ -35,6 +35,7 @@
     <type fullname="ListResizer" preserve="all" />
     <type fullname="OnBoolSet" preserve="all" />
     <type fullname="RobotComponentDatabank" preserve="all" />
+    <type fullname="SetInteractable" preserve="all" />
     <type fullname="SetToggleBG" preserve="all" />
     <type fullname="SetToggleIcon" preserve="all" />
     <type fullname="SublistAnim" preserve="all" />
@@ -43,6 +44,7 @@
     <type fullname="UID_DataList" preserve="all" />
     <type fullname="UID_MultiEdit" preserve="all" />
     <type fullname="UIDataTag" preserve="all" />
+    <type fullname="UIInitializer" preserve="all" />
   </assembly>
   <assembly fullname="com.vftc.robotconstructionkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="AreaScorer" preserve="all" />
@@ -128,14 +130,15 @@
   </assembly>
   <assembly fullname="com.vftc.robotimporter, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="ControlsPanel" preserve="all" />
-    <type fullname="HoverEffect" preserve="all" />
     <type fullname="HoverVisual" preserve="all" />
     <type fullname="ImporterSettings" preserve="all" />
     <type fullname="ImporterSettingsData" preserve="all" />
+    <type fullname="ImporterUIInit" preserve="all" />
     <type fullname="LoadSubScene" preserve="all" />
     <type fullname="MakePartsSelectable" preserve="all" />
     <type fullname="MotorTest" preserve="all" />
     <type fullname="MouseHover" preserve="all" />
+    <type fullname="OnScreenStatus" preserve="all" />
     <type fullname="PartLists" preserve="all" />
     <type fullname="RobotConfigForPlay" preserve="all" />
     <type fullname="RobotConfigManager" preserve="all" />
@@ -144,25 +147,21 @@
     <type fullname="ScrollableField" preserve="all" />
     <type fullname="SelectHandlerTransform" preserve="all" />
     <type fullname="SensorConfigStep" preserve="all" />
+    <type fullname="TestModePanel" preserve="all" />
     <type fullname="TransformPlacement" preserve="all" />
     <type fullname="UIBehavior" preserve="all" />
     <type fullname="VFTC.Components.ComponentUIItem" preserve="all" />
-    <type fullname="VFTC.Wizard.AreaSelect" preserve="all" />
     <type fullname="VFTC.Wizard.RobotConfigWizard" preserve="all" />
     <type fullname="VFTC.Wizard.WizardStep" preserve="all" />
     <type fullname="WheelScript" preserve="all" />
     <type fullname="VFTC.Wizard.PartType" preserve="nothing" serialized="true" />
     <type fullname="VFTC.Wizard.RobotConfig" preserve="nothing" serialized="true" />
-    <type fullname="VFTC.Wizard.SelectedArea" preserve="nothing" serialized="true" />
-    <type fullname="VFTC.Wizard.V3S" preserve="nothing" serialized="true" />
-    <type fullname="VFTC.Wizard.MicroStep" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="com.vftc.robotmultiplayer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="ConvertScoringObject" preserve="all" />
     <type fullname="DebugUI" preserve="all" />
     <type fullname="FieldControl" preserve="all" />
     <type fullname="FieldManager" preserve="all" />
-    <type fullname="GrabberMP" preserve="all" />
     <type fullname="IntakeControl" preserve="all" />
     <type fullname="OnGrabPhotonHandler" preserve="all" />
     <type fullname="PlaneMP" preserve="all" />
@@ -329,6 +328,7 @@
   <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.Camera" preserve="all" />
     <type fullname="UnityEngine.Cubemap" preserve="all" />
+    <type fullname="UnityEngine.CustomRenderTexture" preserve="all" />
     <type fullname="UnityEngine.GameObject" preserve="all" />
     <type fullname="UnityEngine.Light" preserve="all" />
     <type fullname="UnityEngine.LightingSettings" preserve="all" />

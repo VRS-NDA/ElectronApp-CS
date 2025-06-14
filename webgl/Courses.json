@@ -3,6 +3,7 @@
     "shortName": "CS",
     "logoName": "centerstage",
     "description": "Teams will raise the curtain on the power of design, creativity, and precision to create all new experiences. ",
+    "category": 0,
     "coursePrefabs": [
         "WhitePixel",
         "SightCube"
@@ -20,10 +21,83 @@
     ]
 },
 {
+    "courseName": "Level1",
+    "shortName": "C1",
+    "logoName": "centerstage",
+    "description": "Drive forward and raise the flag.",
+    "category": 2,
+    "coursePrefabs": [],
+    "botList": [
+        "Bot(sign2)"
+    ],
+    "keys": []
+},
+{
+    "courseName": "Level2",
+    "shortName": "C2",
+    "logoName": "centerstage",
+    "description": "Drive forward, turn, strafe learn to use encoders and variables.",
+    "category": 2,
+    "coursePrefabs": [],
+    "botList": [
+        "Bot(sign2)"
+    ],
+    "keys": []
+},
+{
+    "courseName": "Level3",
+    "shortName": "C3",
+    "logoName": "centerstage",
+    "description": "Navigate the turns-and learn to strafe.",
+    "category": 2,
+    "coursePrefabs": [],
+    "botList": [
+        "Bot(sign2)"
+    ],
+    "keys": []
+},
+{
+    "courseName": "Level4",
+    "shortName": "C4",
+    "logoName": "centerstage",
+    "description": "Drive forward shoot and reload rings. ",
+    "category": 2,
+    "coursePrefabs": [],
+    "botList": [
+        "Bot(sign2)"
+    ],
+    "keys": []
+},
+{
+    "courseName": "Level5",
+    "shortName": "C5",
+    "logoName": "centerstage",
+    "description": "Shoot the red and blue tubes.",
+    "category": 2,
+    "coursePrefabs": [],
+    "botList": [
+        "Bot(sign2)"
+    ],
+    "keys": []
+},
+{
+    "courseName": "Level6",
+    "shortName": "C6",
+    "logoName": "centerstage",
+    "description": " Drive forward and stop on the line-use a color sensor. ",
+    "category": 2,
+    "coursePrefabs": [],
+    "botList": [
+        "Bot(sign2)"
+    ],
+    "keys": []
+},
+{
     "courseName": "IntoTheDeep",
     "shortName": "ITD",
     "logoName": "InTheDeep",
     "description": "teams will use their STEM and collaboration skills to explore life beneath the surface of the ocean.",
+    "category": 0,
     "coursePrefabs": [
         "Neutral Sample",
         "Specimen"
@@ -48,6 +122,7 @@
     "shortName": "MM",
     "logoName": "MountainMayhem",
     "description": "The Mountain Mayhem field is where robots will clash in an epic snowball and rock fights!",
+    "category": 0,
     "coursePrefabs": [],
     "botList": [
         "Riptide(MM-Riptider)",
@@ -67,6 +142,7 @@
     "shortName": "PP",
     "logoName": "PowerPlay-trans",
     "description": "teams will reimagine the future of sustainable energy and power their ideas forward",
+    "category": 0,
     "coursePrefabs": [
         "Cone"
     ],
@@ -81,10 +157,27 @@
     ]
 },
 {
+    "courseName": "PushBack",
+    "shortName": "V_PB",
+    "logoName": "InTheDeep",
+    "description": "teams will use their STEM and collaboration skills to explore life beneath the surface of the ocean.",
+    "category": 3,
+    "coursePrefabs": [
+        "Block"
+    ],
+    "botList": [
+        "Launcher(ITD-Launcher)",
+        "Grabber(ITD-Grabber)",
+        "Gobilda Starter Kit(ITD-Testkit)"
+    ],
+    "keys": []
+},
+{
     "courseName": "Sandbox",
     "shortName": "SB",
     "logoName": "vrs-SANDBOX",
     "description": "An empty field to test programming",
+    "category": 0,
     "coursePrefabs": [],
     "botList": [],
     "keys": []
