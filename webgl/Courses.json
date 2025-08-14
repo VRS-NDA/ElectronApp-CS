@@ -21,76 +21,27 @@
     ]
 },
 {
-    "courseName": "Level1",
-    "shortName": "C1",
-    "logoName": "centerstage",
-    "description": "Drive forward and raise the flag.",
-    "category": 2,
-    "coursePrefabs": [],
-    "botList": [
-        "Bot(sign2)"
+    "courseName": "DeCode",
+    "shortName": "DEC",
+    "logoName": "DeCode",
+    "description": "teams will use their STEM and collaboration skills to explore life beneath the surface of the ocean.",
+    "category": 0,
+    "coursePrefabs": [
+        "GreenBall",
+        "PurpleBall Variant"
     ],
-    "keys": []
-},
-{
-    "courseName": "Level2",
-    "shortName": "C2",
-    "logoName": "centerstage",
-    "description": "Drive forward, turn, strafe learn to use encoders and variables.",
-    "category": 2,
-    "coursePrefabs": [],
     "botList": [
-        "Bot(sign2)"
+        "Decode Launcher(ITD-Launcher)"
     ],
-    "keys": []
-},
-{
-    "courseName": "Level3",
-    "shortName": "C3",
-    "logoName": "centerstage",
-    "description": "Navigate the turns-and learn to strafe.",
-    "category": 2,
-    "coursePrefabs": [],
-    "botList": [
-        "Bot(sign2)"
-    ],
-    "keys": []
-},
-{
-    "courseName": "Level4",
-    "shortName": "C4",
-    "logoName": "centerstage",
-    "description": "Drive forward shoot and reload rings. ",
-    "category": 2,
-    "coursePrefabs": [],
-    "botList": [
-        "Bot(sign2)"
-    ],
-    "keys": []
-},
-{
-    "courseName": "Level5",
-    "shortName": "C5",
-    "logoName": "centerstage",
-    "description": "Shoot the red and blue tubes.",
-    "category": 2,
-    "coursePrefabs": [],
-    "botList": [
-        "Bot(sign2)"
-    ],
-    "keys": []
-},
-{
-    "courseName": "Level6",
-    "shortName": "C6",
-    "logoName": "centerstage",
-    "description": " Drive forward and stop on the line-use a color sensor. ",
-    "category": 2,
-    "coursePrefabs": [],
-    "botList": [
-        "Bot(sign2)"
-    ],
-    "keys": []
+    "keys": [
+        "ReleaseObject1:Unused",
+        "ReleaseObject2:Unused",
+        "NextItemType:Unused",
+        "MotorSeven:Tilt Lift",
+        "MotorEight:Rear Lift / Launch",
+        "MotorSix:Grabber",
+        "MotorFive:Front Lift"
+    ]
 },
 {
     "courseName": "IntoTheDeep",
