@@ -28,10 +28,10 @@
     "category": 0,
     "coursePrefabs": [
         "GreenBall",
-        "PurpleBall Variant"
+        "PurpleBall"
     ],
     "botList": [
-        "Decode Launcher(ITD-Launcher)"
+        "Decode Launcher(DEC-Launcher)"
     ],
     "keys": [
         "ReleaseObject1:Unused",

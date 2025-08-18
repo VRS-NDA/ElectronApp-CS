@@ -17,16 +17,31 @@ if (handleSquirrelEvent(app)) {
 
 async function createWindow() {
   // Create the browser window.
+  appWindow = null;
   const gotTheLock = app.requestSingleInstanceLock();
   if (gotTheLock) { // Enters if no other instance of the app is running
 
     try {
       await authService.refreshTokens();
-      createAppWindow();
+      appWindow = createAppWindow();
     } catch (err) {
       appWindow = createAppWindow();
+     
     }
-
+    appWindow.webContents.on('will-navigate', function (event, newUrl) {
+      console.log(newUrl);
+      if(newUrl.includes("course/"))
+      {
+        console.log("found course");
+        var parsedUrl = newUrl.split('/');
+        console.log(parsedUrl);
+        console.log("course is "+ parsedUrl[parsedUrl.length-1]);
+        var finalURL = `file://${__dirname}/programpage.html?course=${parsedUrl[parsedUrl.length-1]}`;
+        console.log(finalURL);
+        appWindow.loadURL(finalURL);
+      }
+      // More complex code to handle tokens goes here
+    });
     //Set up main window
     
   } else {

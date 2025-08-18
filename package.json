@@ -1,7 +1,7 @@
 {
-  "name": "VRS Into The Deep",
-  "version": "2.7.26",
-  "version_date": "11/21/2024",
+  "name": "VRSDecode",
+  "version": "2.8.1",
+  "version_date": "8/18/2025",
   "description": "Downloadable Virtual Robot Simulator Platform",
   "main": "main.js",
   "scripts": {
@@ -9,10 +9,7 @@
     "package-win": "electron-packager . --platform=win32 --arch=x64 --prune=true --out=release-builds --icon=logo.ico --overwrite",
     "package-mac": "electron-packager . --overwrite --platform=darwin --prune=true --arch=x64 --out=release-builds --icon=logo.icns",
     "build-installer": "cd release-builds; node build.js",
-    "release": "genversion lib/version.js",
-    "docz:dev": "docz dev",
-    "docz:build": "docz build",
-    "docz:serve": "docz build && docz serve"
+    "release": "genversion lib/version.js"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -33,7 +30,6 @@
   "dependencies": {
     "axios": "^1.6.0",
     "blockly": "^10.2.2",
-    "docz": "^2.4.0",
     "electron-squirrel-startup": "^1.0.0",
     "electron-winstaller": "^5.0.0",
     "form-data": "^4.0.0",

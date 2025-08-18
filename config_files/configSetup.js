@@ -4,17 +4,59 @@ var robotConfig = null;
 var defaultBot = true;
 
 var client = new XMLHttpRequest();
-client.open('GET', './config_files/defaultRobot.json');
-client.onload = function () {
-	var robotConfigTxt = client.responseText;
-	if (robotConfigTxt !== '' && robotConfig == null) {
-		robotConfig = JSON.parse(robotConfigTxt);
 
-		setTimeout(variableUpdate, 1);
+var localCfg = localStorage.getItem("ImportedBotConfig");
+//REMOVE
+//localCfg = "";
+
+function loadConfig(checkImporter = false)
+{
+	localCfg = localStorage.getItem("ImportedBotConfig");
+	//REMOVE
+	//localCfg = "";
+	console.log("localCFG");
+	console.log(localCfg);
+
+
+	client.open('GET', './config_files/defaultRobot.json');
+	client.onload = function () {
+		var robotConfigTxt = client.responseText;
+		if (robotConfigTxt !== '' && robotConfig == null) {
+			
+			console.log("parsed def "+robotConfig);
+			console.log(robotConfig);
+			if(checkImporter && localCfg != "" && localCfg != null)
+			{
+				robotConfig = JSON.parse(localCfg);
+				console.log("parsed cfg" + robotConfig);
+				console.log(robotConfig);
+			}
+			else
+			{
+				robotConfig = JSON.parse(robotConfigTxt);
+			}
+			setTimeout(variableUpdate, 1);
+		}
 	}
+	client.send();
 }
-client.send();
 
+function checkImport()
+{
+	var unityMode = localStorage.getItem('UnityMode');
+	if(unityMode == "left_importer")
+	{
+		loadConfig(true);
+		setupCategories();
+		//createDcMotorExDropdown();
+		//switchToBlocks();
+		localStorageHandler(true);
+	}
+	setTimeout(checkImport,1);
+}
+
+loadConfig();
+checkImport();
 //Dropdowns for Blocks Programs
 function createDcMotorDropdown() {
 	var CHOICES = [];
