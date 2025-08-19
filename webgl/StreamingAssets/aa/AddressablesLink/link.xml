@@ -7,6 +7,7 @@
     <type fullname="DisplayScoring" preserve="all" />
     <type fullname="DoubleSlidingDoorController" preserve="all" />
     <type fullname="DriveReceiverMoveRelative" preserve="all" />
+    <type fullname="DriveSounds" preserve="all" />
     <type fullname="EndgameScore" preserve="all" />
     <type fullname="Flag" preserve="all" />
     <type fullname="FlickeringLight" preserve="all" />
@@ -22,6 +23,7 @@
     <type fullname="PopulateDropdownFromRegister" preserve="all" />
     <type fullname="RandomizationController_MP" preserve="all" />
     <type fullname="RebindSaveLoad" preserve="all" />
+    <type fullname="ScoreObjectSFX" preserve="all" />
     <type fullname="ScoreShowWinner" preserve="all" />
     <type fullname="TeamInventory_MP" preserve="all" />
     <type fullname="UnityEngine.InputSystem.Samples.RebindUI.RebindActionUI" preserve="all" />
@@ -201,6 +203,7 @@
     <type fullname="ShowGamepadIcon" preserve="all" />
     <type fullname="ToggleWindow" preserve="all" />
     <type fullname="UIDataFill" preserve="all" />
+    <type fullname="vftc.ui.ScriptTag" preserve="all" />
     <type fullname="KBindOverride" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="GameScripts, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
