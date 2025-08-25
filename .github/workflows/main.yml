@@ -19,7 +19,7 @@ jobs:
       - name: Fetch Artifact
         uses: dawidd6/action-download-artifact@v11
         with:
-          repository: VRS-NDA/VRS-Unity
+          repo: VRS-NDA/VRS-Unity
           name: WebGLBuild
           workflow_search: true
           workflow_conclusion: success
