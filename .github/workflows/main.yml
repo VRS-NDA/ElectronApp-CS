@@ -26,8 +26,7 @@ jobs:
           #workflow_conclusion: success
           #check_artifacts: true
           branch: decode
-          path: ./downloaded
+          path: ./webgl
           github_token: ${{ secrets.ARTIFACT_DOWNLOADER_TOKEN }}
       - run: |
-          mkdir -p ./imported-files
-          unzip -o ./downloaded/build-artifact.zip -d ./imported-files
+          npm install
