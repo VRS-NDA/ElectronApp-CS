@@ -16,10 +16,10 @@ jobs:
         with:
           lfs: true
       
-      - name: Initialize and update submodules
-        run: |
-          git submodule init
-          git submodule update --recursive
+      #- name: Initialize and update submodules
+      #  run: |
+      #    git submodule init
+      #    git submodule update --recursive
 
       - name: Fetch Artifact
         uses: dawidd6/action-download-artifact@v11
