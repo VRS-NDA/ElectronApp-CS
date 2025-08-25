@@ -1,0 +1,28 @@
+name: Unity Build with Submodules
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+          
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Fetch Artifact
+      - uses: dawidd6/action-download-artifact@v3
+        with:
+          repository: VRS-NDA/VRS-Unity
+          name: WebGLBuild 
+          path: ./downloaded
+          token: ${{ secrets.ARTIFACT_DOWNLOADER_TOKEN }}
+      - run: |
+          mkdir -p ./imported-files
+          unzip -o ./downloaded/build-artifact.zip -d ./imported-files
