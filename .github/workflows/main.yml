@@ -32,7 +32,7 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.ARTIFACT_DOWNLOADER_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+          GITHUB_TOKEN: ${{ secrets.RELEASE_PAK }} # This token is provided by Actions, you do not need to create your own token
         with:
           tag_name: latest
           release_name: Release 1
@@ -49,7 +49,7 @@ jobs:
       - name: Upload Release Asset (single zip)
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_PAK }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./release-package.zip
