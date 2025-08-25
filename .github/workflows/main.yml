@@ -29,16 +29,9 @@ jobs:
           path: ./webgl
           github_token: ${{ secrets.ARTIFACT_DOWNLOADER_TOKEN }}
       - name: Create Release
-        id: create_release
-        uses: comnoco/create-release@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        uses: softprops/action-gh-release@v1
         with:
+          files: test.zip
           tag_name: Test1
-          release_name: Release ${{ github.ref }}
-          body: |
-            Changes in this Release
-            - First Change
-            - Second Change
-          draft: false
-          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
