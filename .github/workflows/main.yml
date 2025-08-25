@@ -17,7 +17,7 @@ jobs:
           lfs: true
 
       - name: Fetch Artifact
-      - uses: dawidd6/action-download-artifact@v11
+        uses: dawidd6/action-download-artifact@v11
         with:
           repository: VRS-NDA/VRS-Unity
           name: WebGLBuild
