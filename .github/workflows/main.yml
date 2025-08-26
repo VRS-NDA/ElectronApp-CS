@@ -1,6 +1,8 @@
 name: Unity Build with Submodules
 
 on:
+  repository_dispatch:
+    types: [start-build]
   push:
     branches:
       - main
@@ -41,7 +43,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.RELEASE_PAK }} # This token is provided by Actions, you do not need to create your own token
         with:
           tag_name: latest
-          release_name: Release 1
+          release_name: Release ${{ github.ref }}
           body: |
             Changes in this Release
             - First Change
