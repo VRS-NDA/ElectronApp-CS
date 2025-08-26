@@ -8,15 +8,6 @@ on:
       - main
 
 jobs:
-  set-timestamp:
-    runs-on: self-hosted
-    outputs:
-      steps: ${{ steps.timestamp.outputs }}
-    steps:
-      - name: Set Timestamp
-        id: timestamp
-        run: echo "TIMESTAMP=$(date +"%Y%m%d%H%M%S")" >> $GITHUB_ENV
-
   build:
     runs-on: self-hosted
 
