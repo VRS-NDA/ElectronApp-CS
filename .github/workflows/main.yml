@@ -7,6 +7,10 @@ on:
     branches:
       - main
 
+# if push
+#${{ github.event.head_commit.message }}
+# if repo dispatch
+
 jobs:
   build:
     runs-on: self-hosted
@@ -59,9 +63,7 @@ jobs:
           tag_name: ${{env.timestamp}}
           release_name: Release ${{ env.timestamp }}
           body: |
-            Changes in this Release
-            - First Change
-            - Second Change
+            ${{ github.event.head_commit.message }}
           draft: false
           prerelease: false
       - name: Zip release payload (single archive)
