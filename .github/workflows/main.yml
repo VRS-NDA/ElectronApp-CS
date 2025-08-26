@@ -17,7 +17,7 @@ jobs:
         shell: bash
         run: |
           echo "sha_short=$(git rev-parse --short "$GITHUB_SHA")" >> "$GITHUB_ENV"
-          echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> "$GITHUB_ENV"
+          echo "timestamp=$(date)" >> "$GITHUB_ENV"
           
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -48,8 +48,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_PAK }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: ${{env.sha_short}}
-          release_name: Release ${{ env.sha_short }}
+          tag_name: ${{env.timestamp}}
+          release_name: Release ${{ env.timestamp }}
           body: |
             Changes in this Release
             - First Change
