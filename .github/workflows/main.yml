@@ -70,7 +70,7 @@ jobs:
           tag_name: ${{env.timestamp}}
           release_name: Release ${{ env.timestamp }}
           body: |
-            ${{ github.event.head_commit.message }}
+            ${{ env.changemsg }}
           draft: false
           prerelease: false
       - name: Zip release payload (single archive)
