@@ -43,7 +43,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.RELEASE_PAK }} # This token is provided by Actions, you do not need to create your own token
         with:
           tag_name: latest
-          release_name: Release ${{ github.ref }}
+          release_name: Release ${{ github.sha }}
           body: |
             Changes in this Release
             - First Change
@@ -60,6 +60,6 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./release.zip
-          asset_name: ${{ steps.tag.outputs.tag_name }}-package.zip
+          asset_name: ${{ steps.tag.outputs.tag_name }}web.zip
           asset_content_type: application/zip
 
