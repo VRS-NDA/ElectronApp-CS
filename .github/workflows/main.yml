@@ -37,7 +37,7 @@ jobs:
           workflow: main.yml
           #workflow_search: false
           #workflow_conclusion: success
-          #check_artifacts: true
+          check_artifacts: true
           branch: decode
           path: ./webgl
           github_token: ${{ secrets.ARTIFACT_DOWNLOADER_TOKEN }}
