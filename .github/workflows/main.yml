@@ -21,12 +21,18 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      
+
+      - name: Get Short Hash
+        shell: bash
+        run: |
+          echo "sha_short=$(git rev-parse --short "$GITHUB_SHA")" >> "$GITHUB_ENV"
+          echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> "$GITHUB_ENV"
+          
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           lfs: true
-      
+        
       #- name: Initialize and update submodules
       #  run: |
       #    git submodule init
@@ -51,8 +57,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_PAK }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: latest
-          release_name: Release ${{ github.sha }}
+          tag_name: ${{env.sha_short}}
+          release_name: Release ${{ env.sha_short }}
           body: |
             Changes in this Release
             - First Change
