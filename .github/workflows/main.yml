@@ -22,11 +22,18 @@ jobs:
         run: |
           echo "sha_short=$(git rev-parse --short "$GITHUB_SHA")" >> "$GITHUB_ENV"
           echo "timestamp=$(date +"%Y.%m.%d.%H.%M.%S")" >> "$GITHUB_ENV"
-          
+   
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           lfs: true
+
+      - if: ${{ github.event.head_commit.message != '' }}
+        name: Electron Updated, Set Changelog
+        run: echo "changemsg=$(echo "${{ github.event.head_commit.message }}")" >> "$GITHUB_ENV"
+      - if: ${{ github.event.head_commit.message == '' }}
+        name: Unity Updated
+        run: echo "changemsg=New_Unity_Build" >> "$GITHUB_ENV"
         
       - name: Configure git for submodules
         run: |
