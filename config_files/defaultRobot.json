@@ -37,13 +37,13 @@
 			"encoder": 560
 		},
 		{
-			"name": "m7",
+			"name": "m7-shootBalls",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560
 		},
 		{
-			"name": "m8",
+			"name": "m8-movePlatform",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560

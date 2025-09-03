@@ -3,7 +3,7 @@
     addEventListener('load',async  () =>{
     const profile = await window.electronAPI.getProfile();
     //document.getElementById('picture').src = profile.picture;
-    if(profile)
+    /*if(profile)
     {
         document.getElementById('name').innerText = profile.name;
         document.getElementById('logout').onclick = () => {
@@ -17,7 +17,7 @@
       document.getElementById('logout').onclick = () => {
         window.electronAPI.logIn();
       };
-    }
+    }*/
 
     
     
