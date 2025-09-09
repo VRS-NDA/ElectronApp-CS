@@ -25,25 +25,25 @@
 			"encoder": 560
 		},
 		{
-			"name": "m5",
+			"name": "m5-lowers Lever",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560
 		},
 		{
-			"name": "m6-release sample",
+			"name": "m6-intake Artifacts",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560
 		},
 		{
-			"name": "m7-shootBalls",
+			"name": "m7-shoot Artifacts",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560
 		},
 		{
-			"name": "m8-movePlatform",
+			"name": "m8-Launch Angle",
 			"type": "normal",
 			"maxrpm": 340,
 			"encoder": 560
