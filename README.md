@@ -1,6 +1,18 @@
-#now runs PP field
-#8-8 this runs ULtimate Goal-ready for PP
- # vFTC-Local
+## Testing
+
+To test the repo grab the latest release, 
+<img width="1575" height="598" alt="image" src="https://github.com/user-attachments/assets/f04aebed-ff71-44f9-8c1a-a2fa09a03e6c" />
+download web.zip,
+<img width="1526" height="487" alt="image" src="https://github.com/user-attachments/assets/a5bb7dd0-e507-4e76-ab52-5d8531f14583" />
+
+unzip the file and open a terminal window in the new folder. From there, enter these commands.
+
+```bash
+# Install dependencies
+npm install
+# Run the app
+npm start
+```
 
 ## Usage
 
@@ -14,20 +26,6 @@ npm install
 # Run the app
 npm start
 ```
-
-## Packaging
-
-Here are the list of commands needed to package the app for Windows.
-
-```bash
-# Go into the repository directory
-cd vFTC-Local
-# Invoke windows packager script (may take a while)
-npm run package-win
-# Go into release-builds
-cd release-builds
-# Run build script to generate Windows Installer (may take a while)
-node build.js
 
 ## PHONTON id
 PUN ID is : 494f38b9-e53b-49ae-8729-465f6a4d566b
