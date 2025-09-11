@@ -1,5 +1,5 @@
 UnityInstance = null;
-this.stopped = false;
+this.stopped = true;
 CheckUnityMode = null;
 async function useMJS() {
     const module = await import('./modules/RSM-CodeExecutionModule/src/importerEvents.mjs');
@@ -114,20 +114,11 @@ function writeMotorPowers() {
     var motors = JSON.parse(localStorage.getItem('motorPowers'));
     var encoderResets = JSON.parse(localStorage.getItem("motorResetEncoders"));
     var servos = JSON.parse(localStorage.getItem('servoPositions'));
-    // for (var i = 0; i < motors.length; i++)
-    //     if (!motors[i])
-    //         motors[i] = 0;
+
+    
     for (var i = 0; i < servos.length; i++)
         if (!servos[i])
             servos[i] = 0;
-
-    // localStorage.setItem('motorResetEncoders', "[false, false, false, false, false, false, false, false]");
-    //console.log(motors);
-    // //Old Code (Lean off of using this)
-    // for (var i = 0; i < encoderResets.length; i++)
-    //     if (encoderResets[i] == true)
-    //         //UnityInstance.SendMessage("PhotonNetworkPlayer(Clone)", "resetEncoders");
-    //         encoderResets[i] = false;
 
     UnityInstance.SendMessage("JSAppIntegration","SetFrontLeft",motors[0]);
     if ( encoderResets[0]) {
